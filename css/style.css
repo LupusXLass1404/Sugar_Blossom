@@ -11,3 +11,18 @@ body {}
 .bd-navbar {
     background-color: #aaa;
 }
+
+/* ====================== About Start ====================== */
+
+.about-imgs {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.about-img {
+    width: 40%;
+    background-image: url(../images/default.jpg);
+    background-position: center;
+    background-size: cover;
+}
