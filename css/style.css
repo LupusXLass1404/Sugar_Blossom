@@ -3,3 +3,11 @@
     padding: 0;
     margin: 0;
 }
+
+
+body {}
+
+/* ====================== Header Start ====================== */
+.bd-navbar {
+    background-color: #aaa;
+}
