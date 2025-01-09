@@ -49,79 +49,16 @@
             </ul>
         </nav>
     </header>
-
-
     <!-- Header End -->
 
-    <!-- ====================== Carousel Start ====================== -->
-    <section id="Carousel">
-        <div class="container-fluid p-0 py-5">
-            <div id="carouselExampleCaptions" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./images/default.jpg" class="d-block w-100">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Carousel End -->
-
-    <!-- ====================== About Start ====================== -->
-    <section id="about">
-        <div class="container py-5">
-            <div class="row py-5">
-                <div class="col-sm-6 about-imgs">
-                    <div class="about-img"></div>
-                    <div class="about-img"></div>
-                </div>
-                <div class="col-sm-6">
-                    <p>About Us</p>
-                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, nostrum?</h1>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit magni impedit laudantium iure
-                        doloribus tenetur, voluptatem est dolores sequi molestiae suscipit provident deleniti, sint amet
-                        dolore consequuntur natus omnis dignissimos?</p>
-                    <br>
-                    <hr>
-                    <br><br>
-                    <button>Contact Us</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About End -->
-
-    <!-- ====================== Menu Start ====================== -->
-    <section id="menu">
-        <div class="container-fluid p-0 py-5">
-            蛋糕
-            餅乾
-            馬卡龍
-            酥皮、塔
-            麵包
-
-        </div>
-    </section>
-    <!-- Menu End -->
-
-    <!-- ====================== News Start ====================== -->
-    <section id="news">
-        <div class="container py-5">
-
-        </div>
-
-    </section>
-    <!-- News End -->
-
-    <!-- ====================== Contact Start ====================== -->
-    <section id="contact">
-        <div class="container py-5">
-
-        </div>
-
-    </section>
-    <!-- Contact End -->
+    
+    <!-- ====================== Main Start ====================== -->
+    <?php
+    // $do = if(isset($_GET['do'])) $_GET['do'];
+    $do = "main";
+    include "./front/{$do}.html";
+    ?>
+    <!-- Main End -->
 
     <!-- ====================== Footer Start ====================== -->
     <footer>
