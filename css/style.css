@@ -26,3 +26,10 @@ body {}
     background-position: center;
     background-size: cover;
 }
+
+/* ====================== Menu Start ====================== */
+.menu-li {
+    height: 80vh;
+    color: #fff;
+    background-color: #494949;
+}
