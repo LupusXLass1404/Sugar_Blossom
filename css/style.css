@@ -1,11 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Itim&family=Noto+Sans+TC:wght@100..900&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+body {
+    font-family: "Noto Sans TC", serif;
+}
 
-body {}
+.com-img {
+    background-image: url(../images/default.jpg);
+    background-position: center;
+    background-size: cover;
+}
 
 /* ====================== Header Start ====================== */
 .bd-navbar {
@@ -22,14 +31,125 @@ body {}
 
 .about-img {
     width: 40%;
-    background-image: url(../images/default.jpg);
-    background-position: center;
-    background-size: cover;
+
 }
 
 /* ====================== Menu Start ====================== */
+.menu-ul {
+    display: flex;
+}
+
 .menu-li {
     height: 80vh;
     color: #fff;
     background-color: #494949;
+    flex: 1;
+    transition: flex 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-li img,
+.menu-text {
+    position: absolute;
+}
+
+
+.menu-filter:hover {
+    display: block;
+}
+
+.menu-li img {
+    width: auto;
+    height: 100%;
+    filter: brightness(0.8) blur(20px);
+    transform: scale(1.5);
+}
+
+.menu-li .hover,
+.menu-li .active {
+    filter: brightness(1) blur(0);
+}
+
+.menu-li.hover {
+    flex: 2;
+}
+
+.menu-li.active {
+    flex: 12;
+}
+
+.menu-li:not(.active):not(.hover) {
+    flex: 1;
+}
+
+
+/* -- ====================== News Start ====================== */
+.news-big-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+}
+
+.news-img {
+    width: 100%;
+    aspect-ratio: 14 / 9;
+}
+
+.news-row {
+    display: flex;
+}
+
+.news-content {
+    padding-left: 20px;
+}
+
+.news .col-sm-6 {}
+
+/* ====================== Admin Start ====================== */
+
+.logo {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bolder;
+    font-family: "Dancing Script", cursive;
+}
+
+#admin aside,
+#admin main {
+    height: 80vh;
+}
+
+.options {
+    background-color: #e4c6ae;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.options ul {
+    padding: 0;
+    margin: 0 16px;
+    cursor: pointer;
+}
+
+.options ul li {
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.options ul li:hover {
+    background-color: #fff;
+}
+
+#admin main {}
+
+.interface {
+    width: 100%;
+    height: 100%;
+    background-color: #da3d3d;
+    border-radius: 8px;
 }

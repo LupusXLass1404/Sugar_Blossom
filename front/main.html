@@ -1,6 +1,6 @@
 <!-- ====================== Carousel Start ====================== -->
-<section id="Carousel">
-    <div class="container-fluid p-0 py-5">
+<section id="carousel">
+    <div class="container-fluid p-0">
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -16,11 +16,11 @@
 <section id="about">
     <div class="container py-5">
         <div class="row py-5">
-            <div class="col-sm-6 about-imgs">
-                <div class="about-img"></div>
-                <div class="about-img"></div>
+            <div class="col-lg-6 about-imgs">
+                <div class="about-img com-img"></div>
+                <div class="about-img com-img"></div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6">
                 <p>About Us</p>
                 <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, nostrum?</h1>
                 <br>
@@ -39,16 +39,24 @@
 
 <!-- ====================== Menu Start ====================== -->
 <section id="menu">
-    <div class="container-fluid p-0 py-5">
-        <div id="menuShow" class="row menu-ul">
-            <div class="col-md-3 menu-li">蛋糕</div>
-            <div class="col-md-3 menu-li">餅乾</div>
-            <div class="col-md-3 menu-li">馬卡龍</div>
-            <div class="col-md-3 menu-li">酥皮、塔</div>
+    <div class="container-fluid py-5">
+        <div id="menu-main" class="row menu-ul">
+            <div class="menu-li">
+                <img src="./images/default.jpg" alt="">蛋糕
+            </div>
+            <div class="menu-li">
+                <img src="./images/default.jpg" alt="">
+                <div class="menu-text">
+                    ｜餅乾｜
+                    看更多
+                </div>
+            </div>
+            <div class="menu-li"> <img src="./images/default.jpg" alt="">｜馬卡龍｜</div>
+            <div class="menu-li"> <img src="./images/default.jpg" alt="">｜酥皮、塔｜</div>
+            <div class="menu-li"> <img src="./images/default.jpg" alt="">｜酥皮、塔｜</div>
         </div>
     </div>
 </section>
-<!-- Menu End -->
 <script>
     const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A6'];
     const menuItems = document.querySelectorAll('.menu-li');
@@ -56,11 +64,94 @@
     menuItems.forEach((item, index) => {
         item.style.backgroundColor = colors[index % colors.length];
     });
+
+    // 為每個 .menu-li 元素綁定事件
+    menuItems.forEach(item => {
+        item.addEventListener('mouseover', () => hoverMenuItem(item));
+        item.addEventListener('mouseout', resetHover);
+        item.addEventListener('click', () => selectMenuItem(item));
+    });
+
+    function hoverMenuItem(element) {
+        // 當 hover 時，加上 hover 類別
+        if (!element.classList.contains('active')) {
+            element.classList.add('hover');
+            const img = element.querySelector('img');
+            img.classList.add('hover');
+        }
+    }
+
+    function resetHover() {
+        // 滑鼠離開時移除 hover 類別
+        menuItems.forEach(item => {
+            item.classList.remove('hover');
+            const img = item.querySelector('img');
+            img.classList.remove('hover');
+        });
+    }
+
+    function selectMenuItem(element) {
+        // 點擊時，將 active 類別添加到被點擊的項目，並移除其他項目的 active 類別
+        menuItems.forEach(item => {
+            item.classList.remove('active')
+            const img = item.querySelector('img');
+            img.classList.remove('active');
+        });
+        element.classList.add('active');
+        const img = element.querySelector('img');
+        img.classList.add('active');
+    }
+
 </script>
+
+<!-- Menu End -->
+
 <!-- ====================== News Start ====================== -->
 <section id="news">
     <div class="container py-5">
+        <div class="row">
+            <h1>最新貼文</h1>
+            <div class="col-lg-6">
+                <div class="news-big-img com-img">2</div>
+                <h2>最最新消息</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, labore aliquam nostrum, incidunt eum
+                    aspernatur optio non id voluptate numquam, beatae iure recusandae? Dolorum dolore iusto voluptatem
+                    quasi sapiente non!</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="news-row">
+                    <div class="news-img com-img"></div>
+                    <div class="news-content">
+                        <h2>新消息1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, labore aliquam nostrum,
+                            incidunt
+                            eum
+                        </p>
+                    </div>
+                </div>
+                <div class="news-row py-4">
+                    <div class="news-img com-img"></div>
+                    <div class="news-content">
+                        <h2>新消息1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, labore aliquam nostrum,
+                            incidunt
+                            eum
+                        </p>
+                    </div>
 
+                </div>
+                <div class="news-row">
+                    <div class="news-img com-img"></div>
+                    <div class="news-content">
+                        <h2>新消息1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, labore aliquam nostrum,
+                            incidunt
+                            eum
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </section>
@@ -69,7 +160,20 @@
 <!-- ====================== Contact Start ====================== -->
 <section id="contact">
     <div class="container py-5">
-
+        <div class="row py-5">
+            <div class="col-lg-6 about-imgs">
+                <div class="com-img"></div>
+            </div>
+            <div class="col-lg-6">
+                <p>About Us</p>
+                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, nostrum?</h1>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit magni impedit laudantium iure
+                    doloribus tenetur, voluptatem est dolores sequi molestiae suscipit provident deleniti, sint amet
+                    dolore consequuntur natus omnis dignissimos?</p>
+                <br>
+            </div>
+        </div>
     </div>
 
 </section>
