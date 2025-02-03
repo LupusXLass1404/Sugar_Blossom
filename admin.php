@@ -18,16 +18,16 @@
                             Sugar Blossom
                         </div>
                         <ul>
-                            <li>LOGO</li>
-                            <li>目錄</li>
-                            <li>輪播</li>
-                            <li>關於</li>
-                            <li>菜單</li>
-                            <li>最新消息</li>
-                            <li>聯絡我們（圖片）</li>
-                            <li>跑馬燈</li>
-                            <li>版權聲明</li>
-                            <li>進站人數</li>
+                            <li><a href="">LOGO</a></li>
+                            <li><a href="">目錄</a></li>
+                            <li><a href="">輪播</a></li>
+                            <li><a href="">關於</a></li>
+                            <li><a href="">菜單</a></li>
+                            <li><a href="">最新消息</a></li>
+                            <li><a href="">聯絡我們（圖片）</a></li>
+                            <li><a href="">跑馬燈</a></li>
+                            <li><a href="">版權聲明</a></li>
+                            <li><a href="">進站人數</a></li>
                         </ul>
                     </div>
 
@@ -36,9 +36,12 @@
                     <div class="interface">
                         <!-- ====================== Main Start ====================== -->
                         <?php
-                        // $do = if(isset($_GET['do'])) $_GET['do'];
-                        $do = "main";
-                        include "./backend/{$do}.html";
+                            $do = $_GET['do'] ?? 'logo';
+                            $file="./backend/{$do}.php";
+
+                            if(!file_exists($file)) $file="./backend/main.php";
+
+                            include $file;
                         ?>
                         <!-- Main End -->
                     </div>
