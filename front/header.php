@@ -1,7 +1,11 @@
 <header class="navbar navbar-expand-lg bd-navbar sticky-top">
     <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
-
-        <a class="navbar-brand logo" href="./index.php">Sugar Blossom</a>
+        <?php
+            $rows = $Logo->find(['sh'=>1]);
+        ?>
+        <a class="navbar-brand logo" href="./index.php">
+            <?=$rows['text'];?>
+        </a>
 
         <ul class="nav">
             <li><a href="#">Home</a></li>
@@ -11,8 +15,10 @@
             <li><a href="#contact">Contact</a></li>
             <li class="nav-item nav">
                 <a href="./admin.php">Dashboard</a>
-                | Register | Login | <i class="fa-solid fa-user"></i>user
+                | <a href="./index.php?do=login">Login</a> | <i class="fa-solid fa-user"></i>user
             </li>
         </ul>
     </nav>
 </header>
+
+<!-- Register -->

@@ -11,8 +11,18 @@
 body {
     font-family: "Noto Sans TC", serif;
 }
-h1,h2,h3,h4,h5,h6{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Cormorant", "Noto Sans TC", serif;
+}
+
+a {
+    text-decoration: none;
 }
 
 .com-img {
@@ -21,12 +31,18 @@ h1,h2,h3,h4,h5,h6{
     background-size: cover;
 }
 
+.con-cent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* ====================== Header Start ====================== */
 .logo {
     color: #fff;
 }
 
-.logo:hover{
+.logo:hover {
     /* color: #e4c6ae; */
 }
 
@@ -35,17 +51,17 @@ h1,h2,h3,h4,h5,h6{
     color: #fff;
 }
 
-.nav li{
+.nav li {
     padding: 0 16px;
-    letter-spacing:2px;
+    letter-spacing: 2px;
 }
 
-.nav li a{
+.nav li a {
     color: #fff;
     text-decoration: none;
 }
 
-.nav li a:hover{
+.nav li a:hover {
     color: #e4c6ae;
     text-decoration: none;
 }
@@ -60,6 +76,8 @@ h1,h2,h3,h4,h5,h6{
 .about-img {
     width: 40%;
 }
+
+.about h1 {}
 
 /* ====================== Menu Start ====================== */
 .menu-ul {
@@ -135,8 +153,6 @@ h1,h2,h3,h4,h5,h6{
     padding-left: 20px;
 }
 
-.news .col-sm-6 {}
-
 /* -- ====================== Contact Start ====================== */
 .contact-border {
     border: 1px solid #D1C1C0;
@@ -169,6 +185,12 @@ h1,h2,h3,h4,h5,h6{
     width: 100%;
 }
 
+/* ====================== Login Start ====================== */
+.login-title {
+    color: #fff;
+    text-align: center;
+}
+
 /* ====================== Footer Start ====================== */
 .marquee {
     background-color: #A27474;
@@ -196,6 +218,7 @@ h1,h2,h3,h4,h5,h6{
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
 }
+
 /* ====================== Admin Start ====================== */
 
 .logo {
@@ -222,9 +245,13 @@ h1,h2,h3,h4,h5,h6{
     cursor: pointer;
 }
 
-.options ul li {
+.options ul li a {
     padding: 12px;
-
+    width: 100%;
+    height: 100%;
+    color: #533633;
+    text-decoration: none;
+    display: block;
 }
 
 .options ul li:hover {
@@ -235,5 +262,86 @@ h1,h2,h3,h4,h5,h6{
 .interface {
     width: 100%;
     height: 100%;
+    background-color: #e4c6ae;
+    border-radius: 8px;
+}
 
+.admin-main {
+    display: flex;
+    height: 100%;
+}
+
+.admin-main>div {
+    width: 50%;
+    padding: 24px;
+}
+
+.admin-right {
+    height: 100%;
+}
+
+.admin-row {
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.admin-form {
+    height: 100%;
+}
+
+.admin-form>div {
+    margin: 8px 0;
+}
+
+.admin-add {
+    text-align: right;
+}
+
+.admin-table {
+    width: 100%;
+}
+
+.admin-table {
+    border-collapse: separate;
+    border-spacing: 8px 0;
+}
+
+.admin-table td,
+.admin-table th {
+    padding: 8px;
+    text-align: center;
+}
+
+.admin-main tr:nth-child(odd) {
+    background-color: #D1C1C0;
+}
+
+.admin-main tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.admin-table th {
+    background-color: #663120;
+    color: #fff;
+    text-align: center;
+}
+
+.admin-buttons {
+    display: flex;
+}
+
+.admin-button {
+    width: 50%;
+    padding: 8px;
+    border: 0;
+    margin: 8px;
+}
+
+.admin-button:hover {
+    background-color: #663120;
+    color: #fff;
+}
+
+.input-text {
+    width: 100%;
 }

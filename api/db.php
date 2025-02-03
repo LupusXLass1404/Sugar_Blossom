@@ -72,6 +72,7 @@ class DB{
             
             $sql = "Insert Into `{$this -> table}`(`" . join("`, `", $keys) . "`) Values ('" . join("', '", $array) . "') ";
         }
+        // echo $sql;
         // return $sql;
         return $this -> pdo -> exec($sql);
     }
@@ -113,7 +114,7 @@ class DB{
     function a2s($array){
         $tmp = [];
         foreach($array as $key => $value){
-            $tmp[] = "{$key} = {$value}";
+            $tmp[] = "`{$key}` = '{$value}'";
         }
         
         return $tmp;
@@ -138,5 +139,6 @@ function to($url){
 
 
 $Test = new DB("test");
-
+$Logo = new DB("logo");
+$About_text = new DB("About_text");
 ?>

@@ -1,12 +1,12 @@
+<?php include_once "./api/db.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include_once "./front/head.html";?>
 
 <body>
     <!-- ====================== Header Start ====================== -->
-    <?php include_once "./front/header.html";?>
+    <?php include_once "./front/header.php";?>
     <!-- Header End -->
-
 
     <section id="admin">
         <div class="container-fluid">
@@ -14,20 +14,24 @@
             <div class="row py-5 px-5">
                 <aside class="col-2">
                     <div class="options">
-                        <div class="logo" style="padding: 16px;">
-                            Sugar Blossom
-                        </div>
+                        <?php
+                            $rows = $Logo->find(['sh'=>1]);
+                        ?>
+                        <a href="./admin.php"><div class="logo" style="padding: 16px;"><?=$rows['text'];?></div></a>
                         <ul>
-                            <li><a href="">LOGO</a></li>
-                            <li><a href="">目錄</a></li>
-                            <li><a href="">輪播</a></li>
-                            <li><a href="">關於</a></li>
-                            <li><a href="">菜單</a></li>
-                            <li><a href="">最新消息</a></li>
-                            <li><a href="">聯絡我們（圖片）</a></li>
-                            <li><a href="">跑馬燈</a></li>
-                            <li><a href="">版權聲明</a></li>
-                            <li><a href="">進站人數</a></li>
+                            <li><a href="?do=logo">Logo</a></li>
+                            <li><a href="?do=dir">Top Menu</a></li>
+                            <li><a href="?do=carousel">Home Slider</a></li>
+                            <li><a href="?do=about_image">About Image</a></li>
+                            <li><a href="?do=about_text">About Text</a></li>
+                            <li><a href="?do=menu">Menu</a></li>
+                            <li><a href="?do=news">News</a></li>
+                            <li><a href="?do=contact">Contact Us Image</a></li>
+                            <li><a href="?do=marquee">Marquee</a></li>
+                            <li><a href="?do=copyright">Footer Copyright</a></li>
+                            <li><a href="?do=link">Footer Links</a></li>
+                            <li><a href="?do=gallery">Footer Gallery</a></li>
+                            <li><a href="?do=visit">Visitor Count</a></li>
                         </ul>
                     </div>
 
@@ -36,7 +40,7 @@
                     <div class="interface">
                         <!-- ====================== Main Start ====================== -->
                         <?php
-                            $do = $_GET['do'] ?? 'logo';
+                            $do = $_GET['do'] ?? 'main';
                             $file="./backend/{$do}.php";
 
                             if(!file_exists($file)) $file="./backend/main.php";

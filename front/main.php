@@ -21,16 +21,17 @@
                 <div class="about-img com-img"></div>
             </div>
             <div class="col-lg-6">
-                <p>About Us</p>
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, nostrum?</h1>
+                <?php
+                    $row = $About_text -> find(['sh'=>1]);
+                ?>
+                <p>About Sugar Blossom</p>
+                <h1><?=$row['title'];?></h1>
                 <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit magni impedit laudantium iure
-                    doloribus tenetur, voluptatem est dolores sequi molestiae suscipit provident deleniti, sint amet
-                    dolore consequuntur natus omnis dignissimos?</p>
+                <p><?=$row['text'];?></p>
                 <br>
                 <hr>
                 <br><br>
-                <button>Contact Us</button>
+                <button class="admin-button">Contact Us</button>
             </div>
         </div>
     </div>
@@ -161,7 +162,7 @@
 <section id="contact">
     <div class="container py-5">
         <div class="py-5 text-center">
-            <h5>Direct communication</h3>
+            <h5>Direct communication</h5>
                 <h1>Connect with Us</h1>
         </div>
         <div class="row contact-border">
@@ -187,6 +188,5 @@
             </div>
         </div>
     </div>
-
 </section>
 <!-- Contact End -->
