@@ -1,5 +1,5 @@
 <?php include_once"./db.php";
-// dd($_POST);
+dd($_POST);
 
 $do=ucfirst($_GET['do']);
 
@@ -9,45 +9,51 @@ if(isset($_POST['add'])){
     unset($_POST['add']);
 }
 
-function row($name, $data){
-    if(isset($row[$name])){
-        $row[$name] = $data;
-    }
-}
-
 // 修改原有的資料
-foreach($_POST['id'] as $idx => $id){
-    if(isset($_POST['del']) && in_array($id, $_POST['del'])){
-        $$do->del($id);
-    }else{
-        $row=$$do->find($id);
-
-        if(isset($row['title'])){
-            $row['title'] = $_POST['title'][$idx];
+if(!empty($_POST)){
+    foreach($_POST['id'] as $idx => $id){
+        if(isset($_POST['del']) && in_array($id, $_POST['del'])){
+            $$do->del($id);
+        }else{
+            $row=$$do->find($id);
+            
+            if(isset($row['title'])){
+                $row['title'] = $_POST['title'][$idx];
+            }
+            if(isset($row['text'])){
+                $row['text'] = $_POST['text'][$idx];
+            }
+            if(isset($row['sh'])){
+                if(is_array($_POST['sh'])){
+                    $row['sh'] = (in_array($id, $_POST['sh'])) ? 1 : 0;
+                } else {
+                    $row['sh'] = ($_POST['sh']==$id) ? 1 : 0;
+                }
+            }
+            if(isset($row['left_sh'])){
+                $row['left_sh'] = (isset($_POST['left_sh']) && $_POST['left_sh']==$id) ? 1 : 0;
+            }
+            if(isset($row['right_sh'])){
+                $row['right_sh'] = (isset($_POST['right_sh']) && $_POST['right_sh']==$id) ? 1 : 0;
+            }
+            // dd($row);
+            $$do->save($row);
         }
-        if(isset($row['text'])){
-            $row['text'] = $_POST['text'][$idx];
-        }
-
-        $row['sh'] = (isset($_POST['sh']) && $_POST['sh']==$id) ? 1 : 0;
-        
-        // dd($row);
-        $$do->save($row);
     }
 }
-
 // 新增資料區
 if(isset($add)){
     // 整理資料
     foreach($add as $name => $rows){
-        foreach($rows as $row){
+        echo $name;
+        foreach($rows as $idx => $row){
             if (!empty($row)){
-                // dd($rows);
-                $tmp[] = [$name => $row];
+                $tmp[$idx][$name] = $row;
             }
         }
     }
     
+    dd($tmp);
     // 新增
     if (isset($tmp)){
         foreach($tmp as $idx => $rows){
@@ -59,3 +65,12 @@ if(isset($add)){
 
 to("../admin.php?do={$_GET['do']}");
 ?>
+
+
+
+
+
+
+
+
+

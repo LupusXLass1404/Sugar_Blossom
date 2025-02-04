@@ -27,8 +27,8 @@ a {
 
 .com-img {
     background-image: url(../images/default.jpg);
-    background-position: center;
     background-size: cover;
+    background-position: center;
 }
 
 .con-cent {
@@ -70,7 +70,6 @@ a {
 .about-imgs {
     display: flex;
     justify-content: space-evenly;
-
 }
 
 .about-img {
@@ -193,9 +192,13 @@ a {
 
 /* ====================== Footer Start ====================== */
 .marquee {
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
     background-color: #A27474;
     color: #fff;
-    font-size: 40px;
+    font-size: 64px;
     font-family: "Cormorant", serif;
 }
 
@@ -228,7 +231,6 @@ a {
     font-family: "Dancing Script", cursive;
 }
 
-#admin aside,
 #admin main {
     height: 80vh;
 }
@@ -274,6 +276,10 @@ a {
 .admin-main>div {
     width: 50%;
     padding: 24px;
+}
+
+.admin-main .admin-one {
+    width: 100%;
 }
 
 .admin-right {
@@ -344,4 +350,10 @@ a {
 
 .input-text {
     width: 100%;
+}
+
+marquee {
+    width: 100%;
+    height: 100%;
+
 }

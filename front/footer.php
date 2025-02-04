@@ -1,7 +1,14 @@
 <footer>
     <div class="container-fluid p-0">
-        <div class="marquee px-5">
-            dasd*
+        <div class="marquee">
+            <marquee behavior="scroll" direction="left" scrollamount="10">
+                <?php
+                    $rows = $Marquee -> all(['sh'=>1]);
+                    foreach($rows as $row){
+                        echo $row['text'] . " * ";
+                    }
+                ?>
+            </marquee>
         </div>
         <div class="info py-3 px-5">
             <div class="row px-5">

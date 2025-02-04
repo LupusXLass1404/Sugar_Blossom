@@ -25,7 +25,6 @@ class DB{
         if(!empty($arg[1])){
             $sql .= $arg[1];
         }
-
         return $this -> fetchAll($sql);
     }
 
@@ -140,5 +139,12 @@ function to($url){
 
 $Test = new DB("test");
 $Logo = new DB("logo");
-$About_text = new DB("About_text");
+$Carousel = new DB("carousel");
+$About_image = new DB("about_image");
+$About_text = new DB("about_text");
+$Menu = new DB("menu");
+$News = new DB("news");
+$Marquee = new DB("marquee");
+
+
 ?>

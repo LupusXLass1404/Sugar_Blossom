@@ -20,7 +20,7 @@
     <!-- Main End -->
 
     <!-- ====================== Footer Start ====================== -->
-    <?php include_once "./front/footer.html";?>
+    <?php include_once "./front/footer.php";?>
     <!-- Footer End -->
 
 </body>

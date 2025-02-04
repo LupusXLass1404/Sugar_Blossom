@@ -54,9 +54,19 @@
         </div>
     </section>
 
+    <!-- Button trigger modal -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal">
+        <div class="modal-dialog">
+            <div id="modal-load" class="modal-content">
+            </div>
+        </div>
+    </div>
+
 
     <!-- ====================== Footer Start ====================== -->
-    <?php include_once "./front/footer.html";?>
+    <?php include_once "./front/footer.php";?>
     <!-- Footer End -->
 
 </body>
