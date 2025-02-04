@@ -60,7 +60,7 @@
 <!-- About End -->
 
 <!-- ====================== Menu Start ====================== -->
-<!-- <section id="menu">
+<section id="menu">
     <div class="container-fluid py-5">
         <div id="menu-main" class="row menu-ul">
             <div class="menu-li">
@@ -78,7 +78,7 @@
             <div class="menu-li"> <img src="./images/default.jpg" alt="">｜酥皮、塔｜</div>
         </div>
     </div>
-</section> -->
+</section>
 <script>
     const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A6'];
     const menuItems = document.querySelectorAll('.menu-li');
