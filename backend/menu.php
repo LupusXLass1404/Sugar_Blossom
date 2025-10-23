@@ -43,7 +43,7 @@
                             </select>
                         </td>
                         <td>
-                            <input type="text" name="depiction[]" value="<?=$row['depiction'];?>" class="input-text">
+                            <textarea type="text" name="depiction[]" class="input-text"><?=$row['depiction'];?></textarea>
                         </td>
                         <td>
                             <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh'] == 1) ? 'checked' : '';?>>

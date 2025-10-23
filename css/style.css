@@ -84,12 +84,23 @@ a {
     grid-template-columns: repeat(4, 1fr);
 }
 
+.menu-img {
+    aspect-ratio: 1.6/1;
+    overflow: hidden;
+}
+
 .menu-li img {
     width: 100%;
+    object-fit: cover;
+    transition: .2s;
 }
 
 .menu-li p {
     text-align: center;
+}
+
+.menu-li:hover img {
+    transform: scale(1.1);
 }
 
 #accordion {

@@ -66,38 +66,20 @@
     <div class="container py-5">
         <h1>Menu</h1>
         <div class="row menu-main">
-            <div class="menu-li">
-                <img src="./images/default.jpg" alt="">
-                <p>* 馬卡龍 *</p>
+            <?php
+                $rows = $Menu -> all();
+                foreach($rows as $row):
+            ?>
+            <div class="menu-li" onclick="showModal('./modal/menu_intro.php?do=menu_intro')">
+                <div class="menu-img">
+                    <img src="./upload/<?=$row['img'];?>" alt="<?=$row['name']?>">
+                </div>
+                <p><?=$row['name']?></p>
             </div>
-
+            <?php endforeach;?>
         </div>
 
     </div>
-
-    Strawberry Tart
-Description: A delicate tart with a buttery, flaky crust filled with velvety pastry cream, topped with freshly sliced, juicy strawberries and a light glaze that adds a subtle shine and sweetness. Perfect for a summer afternoon tea.
-Type: Tart / Fruit Dessert
-
-Strawberry Cake
-Description: A soft, fluffy sponge cake layered with whipped cream and fresh strawberries. Each bite melts in your mouth, balancing the sweetness of cream with the natural tartness of strawberries. Ideal for birthdays or celebrations.
-Type: Layer Cake / Fruit Dessert
-
-Red Velvet Cake
-Description: A classic red velvet cake featuring a tender, moist sponge with a hint of cocoa, paired with smooth cream cheese frosting. The vibrant red hue and rich taste make it a timeless favourite.
-Type: Layer Cake / Cream Dessert
-
-Caramel Pudding
-Description: Silky smooth custard topped with a rich, golden caramel sauce that adds a perfect balance of sweetness and bitterness. A comforting dessert that melts in your mouth with every spoonful.
-Type: Pudding / Custard Dessert
-
-Chocolate Mousse
-Description: A light, airy mousse made from high-quality dark chocolate, gently whipped to perfection. Its creamy texture and deep chocolate flavour make it a luxurious indulgence for chocolate lovers.
-Type: Mousse / Chocolate Dessert
-
-Lemon Tart (新增)
-Description: A crisp, buttery pastry shell filled with tangy, smooth lemon curd, topped with a dusting of powdered sugar or a thin layer of toasted meringue. Refreshing and zesty, this tart is perfect for brightening any dessert table.
-Type: Tart / Citrus Dessert
 </section>
 
 <script>
@@ -180,3 +162,11 @@ Type: Tart / Citrus Dessert
     </div>
 </section>
 <!-- Contact End -->
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal">
+    <div class="modal-dialog">
+        <div id="modal-load" class="modal-content">
+        </div>
+    </div>
+</div>

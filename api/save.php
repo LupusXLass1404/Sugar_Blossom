@@ -29,6 +29,9 @@ if(!empty($_POST)){
             if(isset($row['type'])){
                 $row['type'] = $_POST['type'][$idx];
             }
+            if(isset($row['depiction'])){
+                $row['depiction'] = $_POST['depiction'][$idx];
+            }
             if(isset($row['sh'])){
                 if(is_array($_POST['sh'])){
                     $row['sh'] = (in_array($id, $_POST['sh'])) ? 1 : 0;

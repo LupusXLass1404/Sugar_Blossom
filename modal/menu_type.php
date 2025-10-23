@@ -1,4 +1,4 @@
- <?php include_once "../api/db.php";?>
+<?php include_once "../api/db.php";?>
 <div class="modal-header">
     <span class="modal-title" id="exampleModalLabel">Edit menu type</span>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
