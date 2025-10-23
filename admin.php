@@ -21,17 +21,12 @@
                         <a href="./admin.php"><div class="logo" style="padding: 16px; color: #663120;"><?=$rows['text'];?></div></a>
                         <ul>
                             <li><a href="?do=logo" class="<?= ($do == 'logo') ? 'active' : '' ?>">Logo</a></li>
-                            <li><a href="?do=dir" class="<?= ($do == 'dir') ? 'active' : '' ?>">Top Menu</a></li>
                             <li><a href="?do=carousel" class="<?= ($do == 'carousel') ? 'active' : '' ?>">Home Slider</a></li>
                             <li><a href="?do=about_image" class="<?= ($do == 'about_image') ? 'active' : '' ?>">About Image</a></li>
                             <li><a href="?do=about_text" class="<?= ($do == 'about_text') ? 'active' : '' ?>">About Text</a></li>
                             <li><a href="?do=menu" class="<?= ($do == 'menu') ? 'active' : '' ?>">Menu</a></li>
                             <li><a href="?do=news" class="<?= ($do == 'news') ? 'active' : '' ?>">News</a></li>
-                            <li><a href="?do=contact" class="<?= ($do == 'contact') ? 'active' : '' ?>">Contact Us Image</a></li>
                             <li><a href="?do=marquee" class="<?= ($do == 'marquee') ? 'active' : '' ?>">Marquee</a></li>
-                            <li><a href="?do=copyright" class="<?= ($do == 'copyright') ? 'active' : '' ?>">Footer Copyright</a></li>
-                            <li><a href="?do=link" class="<?= ($do == 'link') ? 'active' : '' ?>">Footer Links</a></li>
-                            <li><a href="?do=gallery" class="<?= ($do == 'gallery') ? 'active' : '' ?>">Footer Gallery</a></li>
                             <li><a href="?do=visit" class="<?= ($do == 'visit') ? 'active' : '' ?>">Visitor Count</a></li>
                         </ul>
                     </div>

@@ -37,6 +37,10 @@ a {
     align-items: center;
 }
 
+.cent {
+    text-align: center;
+}
+
 /* ====================== Header Start ====================== */
 .logo {
     color: #fff;
@@ -89,7 +93,7 @@ a {
     overflow: hidden;
 }
 
-.menu-li img {
+.menu-img img {
     width: 100%;
     object-fit: cover;
     transition: .2s;

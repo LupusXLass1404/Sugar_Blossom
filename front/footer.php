@@ -40,10 +40,14 @@
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12 p-3 px-5">
-                    <h3>Gallery</h3>
-                    <div>
-                        coming soon
-                    </div>
+                    <h3>Partners</h3>
+
+                    <ul class="p-0">
+                        <li><i class="fas fa-chevron-right"></i> <a href="https://lupusxlass1404.github.io/PinkBakery/" target="_blank">PinkBakery</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="https://lupusxlass1404.github.io/113_WebFrontend_Final/" target="_blank">Charcoal barbecue</a></li>
+                        <li><i class="fas fa-chevron-right"></i> More to come soon...</li>
+                    </ul>
+
                 </div>
             </div>
         </div>

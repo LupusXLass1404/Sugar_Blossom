@@ -70,7 +70,7 @@
                 $rows = $Menu -> all();
                 foreach($rows as $row):
             ?>
-            <div class="menu-li" onclick="showModal('./modal/menu_intro.php?do=menu_intro')">
+            <div class="menu-li" onclick="showModal('./modal/menu_intro.php?id=<?=$row['id']?>')">
                 <div class="menu-img">
                     <img src="./upload/<?=$row['img'];?>" alt="<?=$row['name']?>">
                 </div>
