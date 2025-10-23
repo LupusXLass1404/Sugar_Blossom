@@ -1,6 +1,7 @@
 <div class="admin-main">
     <div class="admin-fluid">
         <div class="admin-add px-4">
+            <span class="btn btn-secondary admin-button" onclick="showModal('./modal/menu_type.php?do=menu_type')">Edit type</span>
             <button id="add" class="admin-button">Add Data</button>
         </div>
         <form action="./api/save.php?do=<?=$_GET['do'];?>" class="admin-form" method="post">
@@ -27,18 +28,22 @@
                             <span class="btn btn-secondary admin-button" onclick="showModal('./modal/upload_img.php?do=<?=$_GET['do'];?>&id=<?=$row['id'];?>')">Change</span>
                         </td>
                         <td>
-                            <input type="name" name="name[]" value="<?=$row['name'];?>" class="input-text">
+                            <input type="text" name="name[]" value="<?=$row['name'];?>" class="input-text">
                         </td>
                         <td>
                             <select name="type[]" class="input-text">
                                 <option value="none">none</option>
-                                <option value="A" <?=$row['type'] ==='A'?'selected':''?>>A</option>
-                                <option value="B" <?=$row['type'] ==='B'?'selected':''?>>B</option>
-                                <option value="C" <?=$row['type'] ==='C'?'selected':''?>>C</option>
+                                <?php
+                                    $rows_type = $Menu_type -> all();
+                                    dd($rows_type);
+                                    foreach($rows_type as $row_type):
+                                ?>
+                                <option value="<?=$row_type['type']?>" <?= $row_type['type'] === $row['type']?'selected':'';?>><?=$row_type['type']?></option>
+                                <?php endforeach;?>
                             </select>
                         </td>
                         <td>
-                            <input type="depiction" name="depiction[]" value="<?=$row['depiction'];?>" class="input-text">
+                            <input type="text" name="depiction[]" value="<?=$row['depiction'];?>" class="input-text">
                         </td>
                         <td>
                             <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh'] == 1) ? 'checked' : '';?>>
@@ -70,6 +75,18 @@
                         <td></td>
                         <td>
                             <input type="text" name="add[name][]" value="" class="input-text">
+                        </td>
+                        <td>
+                            <select name="add[type][]" class="input-text">
+                                <option value="none">none</option>
+                                <?php
+                                    $rows_type = $Menu_type -> all();
+                                    dd($rows_type);
+                                    foreach($rows_type as $row_type):
+                                ?>
+                                <option value="<?=$row_type['type']?>"><?=$row_type['type']?></option>
+                                <?php endforeach;?>
+                            </select>
                         </td>
                         <td>
                             <textarea name="add[depiction][]" value="" class="input-text"></textarea>

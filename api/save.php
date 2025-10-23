@@ -17,11 +17,17 @@ if(!empty($_POST)){
         }else{
             $row=$$do->find($id);
 
+            if(isset($row['name'])){
+                $row['name'] = $_POST['name'][$idx];
+            }
             if(isset($row['title'])){
                 $row['title'] = $_POST['title'][$idx];
             }
             if(isset($row['text'])){
                 $row['text'] = $_POST['text'][$idx];
+            }
+            if(isset($row['type'])){
+                $row['type'] = $_POST['type'][$idx];
             }
             if(isset($row['sh'])){
                 if(is_array($_POST['sh'])){
@@ -63,7 +69,11 @@ if(isset($add)){
     }
 }
 
-to("../admin.php?do={$_GET['do']}");
+if ($_GET['do'] === "menu_type") {
+    to("../admin.php?do=menu");
+} else{
+    to("../admin.php?do={$_GET['do']}");
+}
 ?>
 
 

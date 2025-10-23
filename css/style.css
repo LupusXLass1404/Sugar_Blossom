@@ -363,16 +363,12 @@ a {
     padding: 24px;
 }
 
-.admin-main .admin-one {
+.admin-main .admin-fluid {
     width: 100%;
 }
 
 .admin-right {
     height: 100%;
-}
-
-.admin-fluid {
-    width: 100% !important;
 }
 
 .admin-row {
@@ -390,6 +386,8 @@ a {
 
 .admin-add {
     text-align: right;
+    display: flex;
+    justify-content: end;
 }
 
 .admin-table {

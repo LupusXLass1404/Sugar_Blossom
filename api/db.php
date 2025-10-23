@@ -143,6 +143,7 @@ $Carousel = new DB("carousel");
 $About_image = new DB("about_image");
 $About_text = new DB("about_text");
 $Menu = new DB("menu");
+$Menu_type = new DB("menu_type");
 $News = new DB("news");
 $Marquee = new DB("marquee");
 
