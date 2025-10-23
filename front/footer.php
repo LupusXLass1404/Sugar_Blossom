@@ -15,34 +15,34 @@
                 <div class="col-lg-3 col-md-6 col-12 p-3 px-5">
                     <h3>Social Media</h3>
                     <ul class="p-0">
-                        <li>* Facebook</li>
-                        <li>* Instagram</li>
-                        <li>* Twitter</li>
-                        <li>* Youtube</li>
+                        <li><i class="fas fa-chevron-right"></i> Facebook</li>
+                        <li><i class="fas fa-chevron-right"></i> Instagram</li>
+                        <li><i class="fas fa-chevron-right"></i> Twitter</li>
+                        <li><i class="fas fa-chevron-right"></i> Youtube</li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12 p-3 px-5">
                     <h3>Services</h3>
                     <ul class="p-0">
                         <li><i class="fas fa-chevron-right"></i> Pricing</li>
-                        <li>* Testimonials</li>
-                        <li>* Customer Support</li>
-                        <li>* Products & Services</li>
+                        <li><i class="fas fa-chevron-right"></i> Testimonials</li>
+                        <li><i class="fas fa-chevron-right"></i> Customer Support</li>
+                        <li><i class="fas fa-chevron-right"></i> Products & Services</li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12 p-3 px-5">
                     <h3>Useful</h3>
                     <ul class="p-0">
-                        <li>* Newsletter</li>
-                        <li>* Partnerships</li>
-                        <li>* Privacy Policy</li>
-                        <li>* Terms and Conditions</li>
+                        <li><i class="fas fa-chevron-right"></i> Newsletter</li>
+                        <li><i class="fas fa-chevron-right"></i> Partnerships</li>
+                        <li><i class="fas fa-chevron-right"></i> Privacy Policy</li>
+                        <li><i class="fas fa-chevron-right"></i> Terms and Conditions</li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12 p-3 px-5">
                     <h3>Gallery</h3>
                     <div>
-                        dsf
+                        coming soon
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <a href="https://github.com/LupusXLass1404/Sugar_Blossom" target="_blank">
                 <i class="fa-brands fa-github"></i> github
             </a>
-            <i class="fa-regular fa-copyright"></i> 2024 Nemophila. All Rights Reserved.
+            <i class="fa-regular fa-copyright"></i> 2025 Misty Moon. All Rights Reserved.
         </div>
     </div>
 </footer>

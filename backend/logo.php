@@ -3,13 +3,13 @@
         <?php
             $rows = $Logo->find(['sh'=>1]);
         ?>
-        <div class="logo"><?=$rows['text'];?></div>
+        <div class="logo" style="background-color: #663120; padding: 8px"><?=$rows['text'];?></div>
     </div>
     <div class="admin-right">
         <div class="admin-add px-4">
             <button id="add" class="admin-button">Add Data</button>
         </div>
-        <form action="../api/save.php?do=<?=$_GET['do'];?>" class="admin-form" method="post">
+        <form action="./api/save.php?do=<?=$_GET['do'];?>" class="admin-form" method="post">
             <div class="admin-row">
                 <table id="data" class="admin-table">
                     <tr>
@@ -17,13 +17,13 @@
                         <th width=5%>Show</th>
                         <th width=5%>Delete</th>
                     </tr>
-                    
+
                     <?php
                         $do=ucfirst($_GET['do']);
                         $rows = $$do -> all();
                         foreach($rows as $row):
                     ?>
-    
+
                     <tr>
                         <td>
                             <input type="text" name="text[]" value="<?=$row['text'];?>" class="input-text">
@@ -37,10 +37,10 @@
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                     </tr>
 
-                    <?php 
+                    <?php
                         endforeach;
                     ?>
-                    
+
                 </table>
             </div>
             <div class="admin-buttons">

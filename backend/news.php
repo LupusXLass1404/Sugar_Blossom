@@ -1,9 +1,9 @@
 <div class="admin-main">
-    <div class="admin-one">
+    <div class="admin-fluid">
         <div class="admin-add px-4">
             <button id="add" class="admin-button">Add Data</button>
         </div>
-        <form action="../api/save.php?do=<?=$_GET['do'];?>" class="admin-form" method="post">
+        <form action="./api/save.php?do=<?=$_GET['do'];?>" class="admin-form" method="post">
             <div class="admin-row">
                 <table id="data" class="admin-table">
                     <tr>
@@ -13,13 +13,13 @@
                         <th width=5%>Show</th>
                         <th width=5%>Delete</th>
                     </tr>
-                    
+
                     <?php
                         $do=ucfirst($_GET['do']);
                         $rows = $$do -> all();
                         foreach($rows as $row):
                     ?>
-    
+
                     <tr>
                         <td>
                             <img src="./upload/<?=$row['img'];?>" alt="" width=120x><br>
@@ -40,10 +40,10 @@
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                     </tr>
 
-                    <?php 
+                    <?php
                         endforeach;
                     ?>
-                    
+
                 </table>
             </div>
             <div class="admin-buttons">

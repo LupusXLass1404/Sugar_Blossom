@@ -68,7 +68,7 @@ class DB{
         } else {
             // 新增
             $keys = array_keys($array);
-            
+
             $sql = "Insert Into `{$this -> table}`(`" . join("`, `", $keys) . "`) Values ('" . join("', '", $array) . "') ";
         }
         // echo $sql;
@@ -115,7 +115,7 @@ class DB{
         foreach($array as $key => $value){
             $tmp[] = "`{$key}` = '{$value}'";
         }
-        
+
         return $tmp;
     }
 }
@@ -145,6 +145,7 @@ $About_text = new DB("about_text");
 $Menu = new DB("menu");
 $News = new DB("news");
 $Marquee = new DB("marquee");
+
 
 
 ?>

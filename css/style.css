@@ -76,67 +76,148 @@ a {
     width: 40%;
 }
 
-.about h1 {}
-
 /* ====================== Menu Start ====================== */
-.menu-ul {
-    display: flex;
+
+.menu-main {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
 }
 
-.menu-li {
-    height: 80vh;
+.menu-li img {
+    width: 100%;
+}
+
+.menu-li p {
+    text-align: center;
+}
+
+#accordion {
+    display: flex;
+    background-color: black;
+}
+
+@media (max-width: 768px) {
+    #accordion {
+        flex-direction: column;
+    }
+}
+
+.accordion-item {
+    width: 100%;
+    height: 100vh;
+    min-height: 120px;
+    /* 配合手機版展開的高度動畫 */
+    max-height: 720px;
+    /* 配合電腦版，限制元素高度 */
     color: #fff;
     background-color: #494949;
     flex: 1;
-    transition: flex 0.3s ease;
     cursor: pointer;
     overflow: hidden;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 36px;
+    transition: flex 1s cubic-bezier(0, 0, 0.2, 1), max-height 1s cubic-bezier(0, 0, 0.2, 1), min-height 1s cubic-bezier(0, 0, 0.2, 1);
+    /* flex, max-height, min-height動畫 */
 }
 
-.menu-li img,
-.menu-text {
+@media (max-width: 768px) {
+    .accordion-item {
+        flex: 2;
+        /* js的hover因為是2，所以將手機版設為2可以避免展開 */
+    }
+}
+
+.accordion-item>img,
+.accordion-item>h4,
+.gallery-backdrop {
     position: absolute;
 }
 
-
-.menu-filter:hover {
-    display: block;
+.accordion-item>h4 {
+    text-align: center;
+    font-weight: lighter;
+    top: 10%;
 }
 
-.menu-li img {
-    width: auto;
+.accordion-item>img {
+    width: 100%;
     height: 100%;
     filter: brightness(0.8) blur(20px);
+    object-fit: cover;
+    /* 會保持圖像的比例，並填滿整個容器，可能會裁剪掉圖像的部分。 */
+    object-position: center;
     transform: scale(1.5);
 }
 
-.menu-li .hover,
-.menu-li .active {
+.accordion-item .hover,
+.accordion-item .active {
     filter: brightness(1) blur(0);
 }
 
-.menu-li.hover {
+/* 點黏在一起是組合元素，意思是要兩個都在同一個tag上才會生效 */
+.accordion-item.hover {
     flex: 2;
 }
 
-.menu-li.active {
+.accordion-item.active {
+    min-height: 640px;
     flex: 12;
 }
 
-.menu-li:not(.active):not(.hover) {
+.accordion-item:not(.active):not(.hover) {
     flex: 1;
 }
 
+.accordion-close {
+    font-size: 20px;
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+    display: none;
+}
+
+.accordion-gallery {
+    display: none;
+}
+
+.gallery-backdrop {
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    background: linear-gradient(180deg, transparent -75%, rgba(0, 0, 0, .8) 60%);
+    backdrop-filter: blur(6px);
+    width: 100%;
+    padding: 16px;
+}
+
+.gallery-button {
+    aspect-ratio: 1 / 1;
+    width: 100px;
+    height: 100px;
+
+}
+
+@media (max-width: 768px) {
+    .gallery-button {
+        width: 66px;
+        height: 66px;
+    }
+}
+
+.gallery-button img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 
 /* -- ====================== News Start ====================== */
 .news-big-img {
     width: 100%;
     aspect-ratio: 16 / 9;
-
 }
 
 .news-img {
@@ -260,6 +341,10 @@ a {
     background-color: #fff;
 }
 
+.options .active {
+    background-color: #533633;
+    color: #fff;
+}
 
 .interface {
     width: 100%;
@@ -284,6 +369,10 @@ a {
 
 .admin-right {
     height: 100%;
+}
+
+.admin-fluid {
+    width: 100% !important;
 }
 
 .admin-row {

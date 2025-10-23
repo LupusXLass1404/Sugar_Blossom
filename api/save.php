@@ -16,7 +16,7 @@ if(!empty($_POST)){
             $$do->del($id);
         }else{
             $row=$$do->find($id);
-            
+
             if(isset($row['title'])){
                 $row['title'] = $_POST['title'][$idx];
             }
@@ -52,7 +52,7 @@ if(isset($add)){
             }
         }
     }
-    
+
     dd($tmp);
     // 新增
     if (isset($tmp)){
