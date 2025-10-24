@@ -15,37 +15,37 @@
                 <div class="col-lg-3 col-md-6 col-12 p-3 px-5">
                     <h3>Social Media</h3>
                     <ul class="p-0">
-                        <li><i class="fas fa-chevron-right"></i> Facebook</li>
-                        <li><i class="fas fa-chevron-right"></i> Instagram</li>
-                        <li><i class="fas fa-chevron-right"></i> Twitter</li>
-                        <li><i class="fas fa-chevron-right"></i> Youtube</li>
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="fas fa-chevron-right"></i> Facebook</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><i class="fas fa-chevron-right"></i> Instagram</a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="fas fa-chevron-right"></i> Twitter</a></li>
+                        <li><a href="https://www.youtube.com/" target="_blank"><i class="fas fa-chevron-right"></i> Youtube</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12 p-3 px-5">
                     <h3>Services</h3>
                     <ul class="p-0">
-                        <li><i class="fas fa-chevron-right"></i> Pricing</li>
-                        <li><i class="fas fa-chevron-right"></i> Testimonials</li>
-                        <li><i class="fas fa-chevron-right"></i> Customer Support</li>
-                        <li><i class="fas fa-chevron-right"></i> Products & Services</li>
+                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Pricing</li>
+                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Testimonials</li>
+                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Customer Support</li>
+                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Products & Services</li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12 p-3 px-5">
                     <h3>Useful</h3>
                     <ul class="p-0">
-                        <li><i class="fas fa-chevron-right"></i> Newsletter</li>
-                        <li><i class="fas fa-chevron-right"></i> Partnerships</li>
-                        <li><i class="fas fa-chevron-right"></i> Privacy Policy</li>
-                        <li><i class="fas fa-chevron-right"></i> Terms and Conditions</li>
+                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Newsletter</li>
+                        <li><a href="https://lupusxlass1404.github.io/" target="_blank"><i class="fas fa-chevron-right"></i> Partnerships</a></li>
+                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Privacy Policy</li>
+                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Terms and Conditions</li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12 p-3 px-5">
                     <h3>Partners</h3>
 
                     <ul class="p-0">
-                        <li><i class="fas fa-chevron-right"></i> <a href="https://lupusxlass1404.github.io/PinkBakery/" target="_blank">PinkBakery</a></li>
-                        <li><i class="fas fa-chevron-right"></i> <a href="https://lupusxlass1404.github.io/113_WebFrontend_Final/" target="_blank">Charcoal barbecue</a></li>
-                        <li><i class="fas fa-chevron-right"></i> More to come soon...</li>
+                        <li><a href="https://lupusxlass1404.github.io/PinkBakery/" target="_blank"><i class="fas fa-chevron-right"></i> PinkBakery</a></li>
+                        <li><a href="https://lupusxlass1404.github.io/113_WebFrontend_Final/" target="_blank"><i class="fas fa-chevron-right"></i> Charcoal barbecue</a></li>
+                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> More to come soon...</li>
                     </ul>
 
                 </div>

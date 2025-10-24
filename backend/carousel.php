@@ -29,7 +29,7 @@
         <div class="admin-add px-4">
             <button id="add" class="admin-button" onclick="showModal('./modal/upload_img.php?do=<?=$_GET['do'];?>')">Add Image</button>
         </div>
-        <form action="../api/save.php?do=<?=$_GET['do'];?>" class="admin-form" method="post">
+        <form action="./api/save.php?do=<?=$_GET['do'];?>" class="admin-form" method="post">
             <div class="admin-row">
                 <table id="data" class="admin-table">
                     <tr>
@@ -44,7 +44,7 @@
                         $rows = $$do -> all();
                         foreach($rows as $row):
                     ?>
-    
+
                     <tr>
                         <td>
                             <img src="./upload/<?=$row['img'];?>" alt="" width=80px>
@@ -61,7 +61,7 @@
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                     </tr>
 
-                    <?php 
+                    <?php
                         endforeach;
                     ?>
 

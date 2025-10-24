@@ -99,6 +99,10 @@ a {
     transition: .2s;
 }
 
+.menu-li {
+    cursor: pointer;
+}
+
 .menu-li p {
     text-align: center;
 }
@@ -287,6 +291,15 @@ a {
 }
 
 /* ====================== Footer Start ====================== */
+footer a {
+    color: #A27474;
+}
+
+footer a:hover {
+    color: #6C3A39;
+    text-decoration: underline;
+}
+
 .marquee {
     width: 100%;
     display: flex;

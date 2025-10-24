@@ -54,7 +54,7 @@
                 <br>
                 <hr>
                 <br><br>
-                <button class="admin-button">Contact Us</button>
+                <a href="#contact"><button class="admin-button" >Contact Us</button></a>
             </div>
         </div>
     </div>

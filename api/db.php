@@ -9,6 +9,10 @@ class DB{
         $this -> table = $table;
     }
 
+    function lastId(){
+        return $this -> pdo -> lastInsertId();
+    }
+
     function all(...$arg){
         $sql = "Select * From `{$this -> table}` ";
         if(!empty($arg[0])){

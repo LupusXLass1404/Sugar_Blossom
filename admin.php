@@ -28,6 +28,7 @@
                             <li><a href="?do=news" class="<?= ($do == 'news') ? 'active' : '' ?>">News</a></li>
                             <li><a href="?do=marquee" class="<?= ($do == 'marquee') ? 'active' : '' ?>">Marquee</a></li>
                             <li><a href="?do=visit" class="<?= ($do == 'visit') ? 'active' : '' ?>">Visitor Count</a></li>
+                            <li><a href="?do=message" class="<?= ($do == 'message') ? 'active' : '' ?>">Connect Message</a></li>
                         </ul>
                     </div>
 
