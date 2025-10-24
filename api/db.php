@@ -150,7 +150,3 @@ $Menu = new DB("menu");
 $Menu_type = new DB("menu_type");
 $News = new DB("news");
 $Marquee = new DB("marquee");
-
-
-
-?>

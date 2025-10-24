@@ -1,5 +1,5 @@
 <?php include_once"./db.php";
-dd($_POST);
+// dd($_POST);
 
 $do=ucfirst($_GET['do']);
 
@@ -62,7 +62,7 @@ if(isset($add)){
         }
     }
 
-    dd($tmp);
+    // dd($tmp);
     // 新增
     if (isset($tmp)){
         foreach($tmp as $idx => $rows){
@@ -74,16 +74,6 @@ if(isset($add)){
 
 if ($_GET['do'] === "menu_type") {
     to("../admin.php?do=menu");
-} else{
+} else {
     to("../admin.php?do={$_GET['do']}");
 }
-?>
-
-
-
-
-
-
-
-
-

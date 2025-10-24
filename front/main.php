@@ -67,7 +67,7 @@
         <h1>Menu</h1>
         <div class="row menu-main">
             <?php
-                $rows = $Menu -> all();
+                $rows = $Menu -> all(['sh'=>1]);
                 foreach($rows as $row):
             ?>
             <div class="menu-li" onclick="showModal('./modal/menu_intro.php?id=<?=$row['id']?>')">
@@ -101,9 +101,11 @@
 
             <!-- 最大最新的一個新聞 -->
             <div class="col-lg-6">
-                <div class="news-big-img com-img" style="background-image: url('./upload/<?=$row_1['img'];?>');"></div>
-                <h2><?=$row_1['title']?></h2>
-                <p><?=$row_1['text']?></p>
+                <div class="news-big" onclick="showModal('./modal/news_detail.php?id=<?=$row_1['id']?>')">
+                    <div class="news-big-img com-img" style="background-image: url('./upload/<?=$row_1['img'];?>');"></div>
+                    <h2><?=$row_1['title']?></h2>
+                    <p class="text-muted"><?=substr($row_1['text'], 0, 300);?>...</p>
+                </div>
             </div>
 
             <!-- 三個側邊新聞 -->
@@ -111,7 +113,7 @@
                 <?php
                     foreach($rows as $row):
                 ?>
-                <div class="news-row pb-4">
+                <div class="news-row pb-4" onclick="showModal('./modal/news_detail.php?id=<?=$row['id']?>')">
                     <div class="news-img com-img" style="background-image: url('./upload/<?=$row['img'];?>');"></div>
                     <div class="news-content">
                         <h3><?=$row['title']?></h3>
@@ -122,9 +124,33 @@
                     endforeach;
                 ?>
             </div>
-
         </div>
-        <button class="admin-button">More news</button>
+
+        <!-- 四個以上的新聞 -->
+        <p class="cent">
+            <button class="admin-button" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">More news</button>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="news-more">
+                <?php
+                    $rows = $News->all(['sh' => 1], " limit 4,999");
+                    foreach($rows as $row):
+                ?>
+                <div class="news-item pb-4" onclick="showModal('./modal/news_detail.php?id=<?=$row['id']?>')">
+                    <div class="news-img com-img" style="background-image: url('./upload/<?=$row['img'];?>');"></div>
+                    <div>
+                        <h3><?=$row['title']?></h3>
+                    </div>
+                </div>
+                <?php
+                    endforeach;
+                ?>
+            </div>
+            <p class="cent">
+                <button class="admin-button" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Close news</button>
+            </p>
+        </div>
+
     </div>
 
 </section>

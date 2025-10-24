@@ -96,7 +96,7 @@ a {
 .menu-img img {
     width: 100%;
     object-fit: cover;
-    transition: .2s;
+    transition: .3s ease;
 }
 
 .menu-li {
@@ -244,12 +244,48 @@ a {
     aspect-ratio: 14 / 9;
 }
 
+.news-big {
+    cursor: pointer;
+}
+
 .news-row {
     display: flex;
+    cursor: pointer;
 }
 
 .news-content {
     padding-left: 20px;
+}
+
+.news-more {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+}
+
+.news-item {
+    width: calc((100% - 48px) / 3);
+    max-width: calc((100% - 48px) / 3);
+    cursor: pointer;
+}
+
+.news-img,
+.news-big-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: background-size 0.5s ease;
+}
+
+.news-big:hover .news-big-img,
+.news-row:hover .news-img {
+    background-size: 120%;
+}
+
+
+.news-item:hover .news-img {
+    background-size: 150%;
 }
 
 /* -- ====================== Contact Start ====================== */

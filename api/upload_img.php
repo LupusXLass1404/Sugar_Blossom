@@ -20,4 +20,3 @@ if(!empty($_FILES['img'])){
 // dd($_POST);
 
 to("../admin.php?do={$_GET['do']}");
-?>
