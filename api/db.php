@@ -1,4 +1,7 @@
 <?php
+date_default_timezone_set('Asia/Taipei');
+session_start();
+
 class DB{
     protected $dbn = "mysql:host=localhost;charset=utf8;dbname=sugar_blossom";
     protected $pdo;
@@ -84,9 +87,9 @@ class DB{
         $sql = "Select $math($col) From `{$this -> table}`";
         if(!empty($where)){
             $tmp = $this -> a2s($where);
-            $sql .= join(" && ", $tmp);
+            $sql .= " WHERE " . join(" && ", $tmp);
         }
-
+        // echo $sql;
         return $this -> pdo -> query($sql) -> fetchColumn();
     }
 
@@ -119,7 +122,7 @@ class DB{
         foreach($array as $key => $value){
             $tmp[] = "`{$key}` = '{$value}'";
         }
-
+        // dd($array);
         return $tmp;
     }
 }
@@ -150,3 +153,22 @@ $Menu = new DB("menu");
 $Menu_type = new DB("menu_type");
 $News = new DB("news");
 $Marquee = new DB("marquee");
+$Visitor = new DB("visitor");
+
+
+// 計算訪客人數
+if(!isset($_SESSION['view'])){
+    $today = date('Y-m-d');
+
+    if($Visitor -> count(['visit_date'=> $today]) > 0){
+        // 如果今天已經有過訪客了，資料直接+1
+        $v = $Visitor -> find(['visit_date' => $today]);
+        $v['visit_count']++;
+        $Visitor -> save($v);
+    } else {
+        // 如果今天沒訪客，創建今日的資料
+        $Visitor -> save(['visit_date'=>$today, 'visit_count'=>'1']);
+    }
+
+    $_SESSION['view'] = 1;
+}
