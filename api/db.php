@@ -83,30 +83,33 @@ class DB{
         return $this -> pdo -> exec($sql);
     }
 
-    protected function math($math, $col = 'id', $where = []){
+    protected function math($math, $col = 'id', $where = [],$arg = ''){
         $sql = "Select $math($col) From `{$this -> table}`";
         if(!empty($where)){
             $tmp = $this -> a2s($where);
             $sql .= " WHERE " . join(" && ", $tmp);
         }
+        if(!empty($arg)){
+            $sql .= $arg;
+        }
         // echo $sql;
         return $this -> pdo -> query($sql) -> fetchColumn();
     }
 
-    function count($where = []){
-        return $this -> math("count", "*", $where);
+    function count($where = [], $arg = ''){
+        return $this -> math("count", "*", $where, $arg);
     }
-    function sum($col, $where = []){
-        return $this -> math("sum", $col, $where);
+    function sum($col, $where = [], $arg = ''){
+        return $this -> math("sum", $col, $where, $arg);
     }
-    function avg($col, $where = []){
-        return $this -> math("avg", $col, $where);
+    function avg($col, $where = [], $arg = ''){
+        return $this -> math("avg", $col, $where, $arg);
     }
-    function max($col, $where = []){
-        return $this -> math("max", $col, $where);
+    function max($col, $where = [], $arg = ''){
+        return $this -> math("max", $col, $where, $arg);
     }
-    function min($col, $where = []){
-        return $this -> math("min", $col, $where);
+    function min($col, $where = [], $arg = ''){
+        return $this -> math("min", $col, $where, $arg);
     }
 
 

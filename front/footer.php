@@ -35,6 +35,13 @@
                     <ul class="p-0">
                         <li><a href="https://lupusxlass1404.github.io/" target="_blank"><i class="fas fa-chevron-right"></i> Partnerships</a></li>
                         <li><i class="fas fa-chevron-right"></i> Today's Visitors: <?=$Visitor->sum('visit_count',['visit_date'=>date("Y-m-d")]);?></li>
+                        <?php
+                            $monthStart = date('Y-m-01'); // 本月第一天
+                            $monthEnd = date('Y-m-t');   // 本月最後一天
+
+                            $monthVisitors = $Visitor->sum('visit_count', [], "Where visit_date >= '$monthStart' AND visit_date <= '$monthEnd'");
+                        ?>
+                        <li><i class="fas fa-chevron-right"></i> This month's Visitors: <?=$monthVisitors;?></li>
                         <li><i class="fas fa-chevron-right"></i> Total Visitors: <?=$Visitor->sum('visit_count');?></li>
                     </ul>
                 </div>
