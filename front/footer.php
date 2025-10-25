@@ -33,10 +33,10 @@
                 <div class="col-lg-3 col-md-6 col-12 p-3 px-5">
                     <h3>Useful</h3>
                     <ul class="p-0">
-                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Newsletter</li>
                         <li><a href="https://lupusxlass1404.github.io/" target="_blank"><i class="fas fa-chevron-right"></i> Partnerships</a></li>
-                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Privacy Policy</li>
-                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Terms and Conditions</li>
+                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Today's Visitors: </li>
+                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> This week's visitors: </li>
+                        <li style="opacity: 0.5;"><i class="fas fa-chevron-right"></i> Total Visitors: </li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12 p-3 px-5">

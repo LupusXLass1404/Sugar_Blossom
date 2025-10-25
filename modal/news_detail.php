@@ -10,6 +10,7 @@
     <div class="menu-img">
         <img src="./upload/<?=$row['img'];?>" alt="">
     </div>
+    <br>
     <p><?=$row['text']?></p>
 </div>
 <div class="modal-footer">

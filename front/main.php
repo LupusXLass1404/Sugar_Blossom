@@ -2,7 +2,7 @@
 <section id="carousel">
     <div class="container-fluid p-0">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+            <div class="carousel-inner vh-100">
                 <?php
                     $rows = $Carousel -> all(['sh'=>1]);
                     foreach($rows as $row):
@@ -37,11 +37,11 @@
                 <?php
                     $row = $About_image -> find(['left_sh'=>1]);
                 ?>
-                <div class="about-img com-img" style="background-image: url('./upload/<?=$row['img'];?>');"></div>
+                <div class="about-img com-img img-up" style="background-image: url('./upload/<?=$row['img'];?>');"></div>
                 <?php
                     $row = $About_image -> find(['right_sh'=>1]);
                 ?>
-                <div class="about-img com-img" style="background-image: url('./upload/<?=$row['img'];?>');"></div>
+                <div class="about-img com-img img-down" style="background-image: url('./upload/<?=$row['img'];?>');"></div>
             </div>
             <div class="col-lg-6">
                 <?php
@@ -59,6 +59,18 @@
         </div>
     </div>
 </section>
+<script>
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const startPoint = window.innerHeight;
+
+        if (scrollY > startPoint && scrollY < startPoint*2){
+            const offset = scrollY - startPoint;
+            document.querySelector('.img-up').style.transform = `translateY(${offset * 0.1}px)`;
+            document.querySelector('.img-down').style.transform = `translateY(${-offset * 0.1}px)`;
+        }
+    });
+</script>
 <!-- About End -->
 
 <!-- ====================== Menu Start ====================== -->
@@ -81,11 +93,6 @@
 
     </div>
 </section>
-
-<script>
-
-</script>
-
 <!-- Menu End -->
 
 <!-- ====================== News Start ====================== -->
