@@ -147,16 +147,15 @@ function to($url){
 }
 
 
-$Test = new DB("test");
-$Logo = new DB("logo");
-$Carousel = new DB("carousel");
-$About_image = new DB("about_image");
-$About_text = new DB("about_text");
-$Menu = new DB("menu");
-$Menu_type = new DB("menu_type");
-$News = new DB("news");
-$Marquee = new DB("marquee");
-$Visitor = new DB("visitor");
+$Logo = new DB("sugar_blossom_logo");
+$Carousel = new DB("sugar_blossom_carousel");
+$About_image = new DB("sugar_blossom_about_image");
+$About_text = new DB("sugar_blossom_about_text");
+$Menu = new DB("sugar_blossom_menu");
+$Menu_type = new DB("sugar_blossom_menu_type");
+$News = new DB("sugar_blossom_news");
+$Marquee = new DB("sugar_blossom_marquee");
+$Visitor = new DB("sugar_blossom_visitor");
 
 
 // 計算訪客人數

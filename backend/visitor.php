@@ -12,7 +12,7 @@
             $yearRows = q("
                 SELECT YEAR(visit_date) AS year,
                     SUM(visit_count) AS total_count
-                FROM visitor
+                FROM sugar_blossom_visitor
                 GROUP BY YEAR(visit_date)
                 ORDER BY year DESC
             ");
@@ -30,7 +30,7 @@
                 $monthRows = q("
                     SELECT MONTH(visit_date) AS month,
                         SUM(visit_count) AS total_count
-                    FROM visitor
+                    FROM sugar_blossom_visitor
                     WHERE YEAR(visit_date) = {$y['year']}
                     GROUP BY MONTH(visit_date)
                     ORDER BY month
