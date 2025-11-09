@@ -8,14 +8,17 @@
         </a>
 
         <ul class="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="nav-item nav">
-                <a href="./admin.php">Dashboard</a>
-                | <a href="./index.php?do=login">Login</a> | <i class="fa-solid fa-user"></i>user
+            <li><a href="index.php#carousel">Home</a></li>
+            <li><a href="index.php#about">About</a></li>
+            <li><a href="index.php#menu">Menu</a></li>
+            <li><a href="index.php#news">News</a></li>
+            <li><a href="index.php#contact">Contact</a></li>
+            <li class="nav-item nav" style="display: inline-flex;align-items: center;gap: 0.4rem;">
+                <?php if(isset($_SESSION['admin'])):?>
+                    <a href="./admin.php">Dashboard</a>
+                <?php else:?>
+                    <a href="index.php?do=login"><i class="fa-solid fa-user"></i> Login</a>
+                <?php endif;?>
             </li>
         </ul>
     </nav>

@@ -156,6 +156,8 @@ $Menu_type = new DB("sugar_blossom_menu_type");
 $News = new DB("sugar_blossom_news");
 $Marquee = new DB("sugar_blossom_marquee");
 $Visitor = new DB("sugar_blossom_visitor");
+$Admin=new DB('sugar_blossom_admin');
+
 
 
 // 計算訪客人數

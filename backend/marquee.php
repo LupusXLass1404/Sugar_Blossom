@@ -3,7 +3,7 @@
         <div class="admin-add px-4">
             <button id="add" class="admin-button">Add Data</button>
         </div>
-        <form action="../api/save.php?do=<?=$_GET['do'];?>" class="admin-form" method="post">
+        <form action="./api/save.php?do=<?=$_GET['do'];?>" class="admin-form" method="post">
             <div class="admin-row">
                 <table id="data" class="admin-table">
                     <tr>
