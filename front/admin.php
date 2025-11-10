@@ -3,29 +3,21 @@
 <section id="login">
     <div class="container py-5">
         <div class="row contact-border my-5">
+
             <div class="col-lg-6 px-0 contact-img" style="height: 60vh; background-image: url('./images/login.jpg');"></div>
             <div class="col-lg-6 px-0 contact-card">
                 <form id="loginForm" class="p-5 contact-form" method="post">
-                    <h1 class="login-title">Login</h1><small><a href="index.php?do=admin" style="color:#ffffff; text-decoration: underline;">dev: Change admin login</a></small>
+                    <h1 class="login-title">Admin Login</h1>
                     <div>
-                        <input type="text" name="username" placeholder="Username">
+                        <input type="text" name="account" placeholder="Account" value="admin">
                     </div>
                     <div>
-                        <input type="text" name="password" placeholder="Password">
+                        <input type="text" name="password" placeholder="Password" value="1234">
                     </div>
                     <div>
                         <input id="login" type="submit" value="Login">
                     </div>
                     <div id="error" style="color: #ffffff"></div>
-
-                    <div>
-                        <a href="index.php?do=register" style="color:#ffffff; text-decoration: underline;">User Registration</a>
-                    </div>
-
-                    <div>
-                        <a href="index.php?do=forgot" style="color:#ffffff; text-decoration: underline; flow: right">Forgot password?</a>
-                    </div>
-
                 </form>
             </div>
         </div>
@@ -43,12 +35,12 @@
              // 取得表單資料
             const formData = new FormData(form);
             const data = {
-                username: formData.get("username").trim(),
+                account: formData.get("account").trim(),
                 password: formData.get("password")
             };
 
              // 送出 POST 請求
-            fetch("./api/login.php", {
+            fetch("./api/admin.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -61,7 +53,7 @@
                 console.log(result);
                 if (result.success) {
                     // 登入成功
-                    window.location.href = "./index.php";
+                    window.location.href = "./admin.php";
                 } else {
                     // 登入失敗
                     errorId.textContent = result.message || "Login failed";

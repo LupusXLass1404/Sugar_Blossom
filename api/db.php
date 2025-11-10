@@ -157,6 +157,7 @@ $News = new DB("sugar_blossom_news");
 $Marquee = new DB("sugar_blossom_marquee");
 $Visitor = new DB("sugar_blossom_visitor");
 $Admin=new DB('sugar_blossom_admin');
+$User=new DB('sugar_blossom_user');
 
 
 

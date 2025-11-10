@@ -5,27 +5,21 @@
         <div class="row contact-border my-5">
             <div class="col-lg-6 px-0 contact-img" style="height: 60vh; background-image: url('./images/login.jpg');"></div>
             <div class="col-lg-6 px-0 contact-card">
-                <form id="loginForm" class="p-5 contact-form" method="post">
-                    <h1 class="login-title">Login</h1><small><a href="index.php?do=admin" style="color:#ffffff; text-decoration: underline;">dev: Change admin login</a></small>
+                <form id="registerForm" class="p-5 contact-form" method="post">
+                    <h1 class="login-title">Register</h1>
                     <div>
-                        <input type="text" name="username" placeholder="Username">
+                        <input type="text" name="username" placeholder="Username" required>
                     </div>
                     <div>
-                        <input type="text" name="password" placeholder="Password">
+                        <input type="text" name="password" placeholder="Password" required>
                     </div>
                     <div>
-                        <input id="login" type="submit" value="Login">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div>
+                        <input id="login" type="submit" value="Register">
                     </div>
                     <div id="error" style="color: #ffffff"></div>
-
-                    <div>
-                        <a href="index.php?do=register" style="color:#ffffff; text-decoration: underline;">User Registration</a>
-                    </div>
-
-                    <div>
-                        <a href="index.php?do=forgot" style="color:#ffffff; text-decoration: underline; flow: right">Forgot password?</a>
-                    </div>
-
                 </form>
             </div>
         </div>
@@ -34,21 +28,23 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const form = document.getElementById('loginForm');
+        const form = document.getElementById('registerForm');
         const errorId = document.getElementById('error');
 
         form.addEventListener("submit", function(e){
             e.preventDefault(); // 阻止表單默認提交
 
-             // 取得表單資料
+            // 取得表單資料
             const formData = new FormData(form);
             const data = {
                 username: formData.get("username").trim(),
-                password: formData.get("password")
+                password: formData.get("password"),
+                email: formData.get("email").trim()
             };
 
-             // 送出 POST 請求
-            fetch("./api/login.php", {
+
+            // 送出 POST 請求
+            fetch("./api/register.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -58,12 +54,13 @@
             // .then(response => response.text())
             .then(response => response.json()) // 假設 API 回傳 JSON
             .then(result => {
-                console.log(result);
                 if (result.success) {
-                    // 登入成功
-                    window.location.href = "./index.php";
+                    console.log(result);
+                    // 注冊成功
+                    alert(result.message);
+                    window.location.href = "./index.php?do=login";
                 } else {
-                    // 登入失敗
+                    // 注冊失敗
                     errorId.textContent = result.message || "Login failed";
                 }
             })
@@ -71,6 +68,7 @@
                 console.error(err);
                 errorId.textContent = "Network error. Please try again.";
             });
+
         })
     })
 </script>
