@@ -17,7 +17,7 @@
                 <?php if(isset($_SESSION['admin'])):?>
                     <a href="./admin.php">Dashboard</a>
                 <?php else:?>
-                    <a href="index.php?do=login"><i class="fa-solid fa-user"></i> Login</a>
+                    <a href="index.php?do=login"><i class="fa-solid fa-user"></i> Admin Login</a>
                 <?php endif;?>
             </li>
         </ul>

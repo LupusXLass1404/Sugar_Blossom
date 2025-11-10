@@ -65,3 +65,5 @@
         </div>
     </div>
 </footer>
+
+<script src="./js/scrollReveal.js"></script>

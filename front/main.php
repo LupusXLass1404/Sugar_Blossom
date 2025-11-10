@@ -37,52 +37,41 @@
                 <?php
                     $row = $About_image -> find(['left_sh'=>1]);
                 ?>
-                <div class="about-img com-img img-up" style="background-image: url('./upload/<?=$row['img'];?>');"></div>
+                <div class="about-img com-img img-up slid-top" style="background-image: url('./upload/<?=$row['img'];?>');"></div>
                 <?php
                     $row = $About_image -> find(['right_sh'=>1]);
                 ?>
-                <div class="about-img com-img img-down" style="background-image: url('./upload/<?=$row['img'];?>');"></div>
+                <div class="about-img com-img img-down slid-down" style="background-image: url('./upload/<?=$row['img'];?>');"></div>
             </div>
             <div class="col-lg-6">
                 <?php
                     $row = $About_text -> find(['sh'=>1]);
                 ?>
-                <p>About Sugar Blossom</p>
-                <h1><?=$row['title'];?></h1>
+                <p class="slid-right">About Sugar Blossom</p>
+                <h1 class="slid-right"><?=$row['title'];?></h1>
                 <br>
-                <p><?=$row['text'];?></p>
+                <p class="slid-right"><?=$row['text'];?></p>
                 <br>
                 <hr>
                 <br><br>
-                <a href="#contact"><button class="admin-button" >Contact Us</button></a>
+                <a href="#contact" class="slid-right"><button class="admin-button" >Contact Us</button></a>
             </div>
         </div>
     </div>
 </section>
-<script>
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        const startPoint = window.innerHeight;
 
-        if (scrollY > startPoint && scrollY < startPoint*2){
-            const offset = scrollY - startPoint;
-            document.querySelector('.img-up').style.transform = `translateY(${offset * 0.1}px)`;
-            document.querySelector('.img-down').style.transform = `translateY(${-offset * 0.1}px)`;
-        }
-    });
-</script>
 <!-- About End -->
 
 <!-- ====================== Menu Start ====================== -->
 <section id="menu">
     <div class="container py-5">
-        <h1>Menu</h1>
+        <h1 class="slid-left">Menu</h1>
         <div class="row menu-main">
             <?php
                 $rows = $Menu -> all(['sh'=>1]);
                 foreach($rows as $row):
             ?>
-            <div class="menu-li" onclick="showModal('./modal/menu_intro.php?id=<?=$row['id']?>')">
+            <div class="menu-li slid-down" onclick="showModal('./modal/menu_intro.php?id=<?=$row['id']?>')">
                 <div class="menu-img">
                     <img src="./upload/<?=$row['img'];?>" alt="<?=$row['name']?>">
                 </div>
@@ -99,7 +88,7 @@
 <section id="news">
     <div class="container py-5">
         <div class="row">
-            <h1>News</h1>
+            <h1 class="slid-left">News</h1>
             <?php
 				$rows=$News->all(['sh'=>1], " limit 4");
                 $row_1 = $rows[0];
@@ -109,9 +98,9 @@
             <!-- 最大最新的一個新聞 -->
             <div class="col-lg-6">
                 <div class="news-big" onclick="showModal('./modal/news_detail.php?id=<?=$row_1['id']?>')">
-                    <div class="news-big-img com-img" style="background-image: url('./upload/<?=$row_1['img'];?>');"></div>
-                    <h2><?=$row_1['title']?></h2>
-                    <p class="text-muted"><?=substr($row_1['text'], 0, 300);?>...</p>
+                    <div class="news-big-img com-img slid-left" style="background-image: url('./upload/<?=$row_1['img'];?>');"></div>
+                    <h2 class="slid-left"><?=$row_1['title']?></h2>
+                    <p class="text-muted slid-left"><?=substr($row_1['text'], 0, 300);?>...</p>
                 </div>
             </div>
 
@@ -120,7 +109,7 @@
                 <?php
                     foreach($rows as $row):
                 ?>
-                <div class="news-row pb-4" onclick="showModal('./modal/news_detail.php?id=<?=$row['id']?>')">
+                <div class="news-row pb-4 slid-right" onclick="showModal('./modal/news_detail.php?id=<?=$row['id']?>')">
                     <div class="news-img com-img" style="background-image: url('./upload/<?=$row['img'];?>');"></div>
                     <div class="news-content">
                         <h3><?=$row['title']?></h3>
@@ -135,7 +124,7 @@
 
         <!-- 四個以上的新聞 -->
         <p class="cent">
-            <button class="admin-button" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">More news</button>
+            <button class="admin-button slid-right" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">More news</button>
         </p>
         <div class="collapse" id="collapseExample">
             <div class="news-more">
@@ -167,10 +156,10 @@
 <section id="contact">
     <div class="container py-5">
         <div class="py-5 text-center">
-            <h5>Direct communication</h5>
-            <h1>Connect with Us</h1>
+            <h5 class="slid-left">Direct communication</h5>
+            <h1 class="slid-left">Connect with Us</h1>
         </div>
-        <div class="row contact-border">
+        <div class="row contact-border slid-down">
             <div class="col-lg-6 px-0 contact-img"></div>
             <div class="col-lg-6 px-0 contact-card">
                 <form action="" class="p-5 contact-form">
