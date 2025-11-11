@@ -1,4 +1,10 @@
 <?php include_once "./api/db.php";?>
+<?php
+    if(!isset($_SESSION['admin'])){
+        header('HTTP/1.1 403 Forbidden');
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include_once "./front/head.html";?>
