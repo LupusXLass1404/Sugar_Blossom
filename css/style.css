@@ -45,9 +45,7 @@ a {
 
 .shake {
     display: inline-block;
-    /* 讓元素可以位移 */
     animation: shake 0.2s ease-in-out 1;
-    /* 動畫持續時間0.2秒，只播放一次 */
 }
 
 @keyframes shake {

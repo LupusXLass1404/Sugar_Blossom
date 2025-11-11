@@ -5,7 +5,7 @@ $input = json_decode(file_get_contents("php://input"), true);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($input['username'] ?? '');
     $password = $input['password'] ?? '';
-    $email = trim($input['password']) ?? '';
+    $email = trim($input['email']) ?? '';
 
     if ($username === '' || $password === '' || $email === '') {
         echo json_encode(['success' => false, 'message' => 'Please fill in all fields']);

@@ -57,11 +57,12 @@
                 } else {
                     // 登入失敗
                     errorId.textContent = result.message || "Login failed";
+                    formFail();
                 }
             })
             .catch(err => {
-                console.error(err);
                 errorId.textContent = "Network error. Please try again.";
+                formFail();
             });
         })
     })

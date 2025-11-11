@@ -8,13 +8,13 @@
                 <form id="registerForm" class="p-5 contact-form" method="post">
                     <h1 class="login-title">Register</h1>
                     <div>
-                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="text" name="username" placeholder="Username" required autocomplete="username">
                     </div>
                     <div>
-                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="password" name="password" placeholder="Password" required autocomplete="new-password">
                     </div>
                     <div>
-                        <input type="password" name="rePassword" placeholder="Confirm Password" required>
+                        <input type="password" name="rePassword" placeholder="Confirm Password" required autocomplete="new-password">
                     </div>
                     <div>
                         <input type="email" name="email" placeholder="Email" required>
@@ -42,36 +42,44 @@
             const data = {
                 username: formData.get("username").trim(),
                 password: formData.get("password"),
+                rePassword: formData.get("rePassword"),
                 email: formData.get("email").trim()
             };
 
+            console.log(data);
 
-            // 送出 POST 請求
-            fetch("./api/register.php", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            })
-            // .then(response => response.text())
-            .then(response => response.json()) // 假設 API 回傳 JSON
-            .then(result => {
-                if (result.success) {
-                    console.log(result);
-                    // 注冊成功
-                    alert(result.message);
-                    window.location.href = "./index.php?do=login";
-                } else {
-                    // 注冊失敗
-                    errorId.textContent = result.message || "Login failed";
-                }
-            })
-            .catch(err => {
-                console.error(err);
-                errorId.textContent = "Network error. Please try again.";
-            });
-
+            if(data.password === data.rePassword){
+                // 送出 POST 請求
+                fetch("./api/register.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                })
+                // .then(response => response.text())
+                .then(response => response.json()) // 假設 API 回傳 JSON
+                .then(result => {
+                    if (result.success) {
+                        console.log(result);
+                        // 注冊成功
+                        alert(result.message);
+                        window.location.href = "./index.php?do=login";
+                    } else {
+                        // 注冊失敗
+                        errorId.textContent = result.message || "Login failed";
+                        formFail();
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    errorId.textContent = "Network error. Please try again.";
+                    formFail();
+                });
+            } else {
+                errorId.textContent = "Passwords do not match";
+                formFail();
+            }
         })
     })
 </script>
