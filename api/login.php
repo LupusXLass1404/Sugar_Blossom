@@ -22,9 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $_SESSION['user'] = $username;
         } else {
-            echo json_encode(['success' => false, 'message' => 'Invalid account or password']);
+            echo json_encode(['success' => false, 'message' => 'Invalid username or password']);
         }
     } else {
-        echo json_encode(['success' => false, 'message' => 'Invalid account or password']);
+        echo json_encode(['success' => false, 'message' => 'Invalid username or password']);
     }
 }
