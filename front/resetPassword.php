@@ -58,11 +58,11 @@
                 .then(response => response.json()) // 假設 API 回傳 JSON
                 .then(result => {
                     if (result.success) {
-                        // 登入成功
+                        // 變更密碼成功
                         window.location.href = "./index.php?do=login";
                     } else {
-                        // 登入失敗
-                        errorId.textContent = result.message || "Login failed";
+                        // 變更密碼失敗
+                        errorId.textContent = result.message || "Reset failed";
                         formFail();
                     }
                 })

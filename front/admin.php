@@ -50,12 +50,11 @@
             // .then(response => response.text())
             .then(response => response.json()) // 假設 API 回傳 JSON
             .then(result => {
-                console.log(result);
                 if (result.success) {
-                    // 登入成功
+                    // 管理員登入成功
                     window.location.href = "./admin.php";
                 } else {
-                    // 登入失敗
+                    // 管理員登入失敗
                     errorId.textContent = result.message || "Login failed";
                     formFail();
                 }

@@ -52,11 +52,11 @@
             .then(response => response.json()) // 假設 API 回傳 JSON
             .then(result => {
                 if (result.success) {
-                    // 登入成功
+                    // 資料驗證成功
                     window.location.href = result.redirect;
                 } else {
-                    // 登入失敗
-                    errorId.textContent = result.message || "Login failed";
+                    // 資料驗證錯誤
+                    errorId.textContent = result.message || "Data verification failed";
                     formFail();
                 }
             })

@@ -5,7 +5,7 @@
         <div class="row contact-border my-5">
             <div class="col-lg-6 px-0 contact-img" style="height: 60vh; background-image: url('./images/login.jpg');"></div>
             <div class="col-lg-6 px-0 contact-card">
-                <form id="registerForm" class="p-5 contact-form" method="post">
+                <form id="registerForm" class="p-4 contact-form" method="post">
                     <h1 class="login-title">Sign up</h1>
                     <div>
                         <input type="text" name="username" placeholder="Username" required autocomplete="username">
@@ -50,8 +50,6 @@
                 email: formData.get("email").trim()
             };
 
-            console.log(data);
-
             if(data.password === data.rePassword){
                 // 送出 POST 請求
                 fetch("./api/register.php", {
@@ -62,16 +60,15 @@
                     body: JSON.stringify(data)
                 })
                 // .then(response => response.text())
-                // .then(response => response.json()) // 假設 API 回傳 JSON
+                .then(response => response.json()) // 假設 API 回傳 JSON
                 .then(result => {
                     if (result.success) {
-                        console.log(result);
                         // 注冊成功
                         alert(result.message);
                         window.location.href = "./index.php?do=login";
                     } else {
                         // 注冊失敗
-                        errorId.textContent = result.message || "Login failed";
+                        errorId.textContent = result.message || "Sign up failed";
                         formFail();
                     }
                 })
