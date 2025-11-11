@@ -12,7 +12,7 @@
                         <input type="text" name="account" placeholder="Account" value="admin">
                     </div>
                     <div>
-                        <input type="text" name="password" placeholder="Password" value="1234">
+                        <input type="password" name="password" placeholder="Password" value="1234">
                     </div>
                     <div>
                         <input id="login" type="submit" value="Login">

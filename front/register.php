@@ -11,7 +11,10 @@
                         <input type="text" name="username" placeholder="Username" required>
                     </div>
                     <div>
-                        <input type="text" name="password" placeholder="Password" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div>
+                        <input type="password" name="rePassword" placeholder="Confirm Password" required>
                     </div>
                     <div>
                         <input type="email" name="email" placeholder="Email" required>

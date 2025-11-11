@@ -16,6 +16,10 @@
             <li class="nav-item nav" style="display: inline-flex;align-items: center;gap: 0.4rem;">
                 <?php if(isset($_SESSION['admin'])):?>
                     <a href="./admin.php">Dashboard</a>
+                <?php elseif(isset($_SESSION['user'])):?>
+                    <a href="index.php?do=user"><i class="fa-solid fa-user"></i> <?=$_SESSION['user'];?></a>
+                    |
+                    <a href="api/logout.php">Logout</a>
                 <?php else:?>
                     <a href="index.php?do=login"><i class="fa-solid fa-user"></i> Login</a>
                 <?php endif;?>

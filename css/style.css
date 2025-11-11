@@ -41,6 +41,37 @@ a {
     text-align: center;
 }
 
+/* 動畫 */
+
+.shake {
+    display: inline-block;
+    /* 讓元素可以位移 */
+    animation: shake 0.2s ease-in-out 1;
+    /* 動畫持續時間0.2秒，只播放一次 */
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 /* ====================== Header Start ====================== */
 .logo {
     color: #fff;

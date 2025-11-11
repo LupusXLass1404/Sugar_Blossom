@@ -11,7 +11,7 @@
                         <input type="text" name="username" placeholder="Username">
                     </div>
                     <div>
-                        <input type="text" name="password" placeholder="Password">
+                        <input type="password" name="password" placeholder="Password">
                     </div>
                     <div>
                         <input id="login" type="submit" value="Login">
