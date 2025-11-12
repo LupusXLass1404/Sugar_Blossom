@@ -2,7 +2,7 @@
 <section id="carousel">
     <div class="container-fluid p-0">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner vh-100">
+            <div class="carousel-inner">
                 <?php
                     $rows = $Carousel -> all(['sh'=>1]);
                     foreach($rows as $row):
