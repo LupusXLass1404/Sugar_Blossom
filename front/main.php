@@ -79,7 +79,9 @@
             </div>
             <?php endforeach;?>
         </div>
-
+        <p class="cent">
+            <a href="index.php?do=order" class="slid-right"><button class="admin-button" >Order sweets</button></a>
+        </p>
     </div>
 </section>
 <!-- Menu End -->

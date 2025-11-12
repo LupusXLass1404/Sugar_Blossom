@@ -19,17 +19,14 @@
                 <li class="nav-item"><a class="nav-link" href="index.php#news">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.php#contact">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.php?do=order">Order</a></li>
-                <li class="nav-item nav" style="display: inline-flex;align-items: center;gap: 0.4rem;">
-                    <?php if(isset($_SESSION['admin'])):?>
-                        <a class="nav-link" href="./admin.php">Dashboard</a>
-                    <?php elseif(isset($_SESSION['user'])):?>
-                        <a class="nav-link" href="index.php?do=user"><i class="fa-solid fa-user"></i> <?=$_SESSION['user'];?></a>
-                        |
-                        <a class="nav-link" href="api/logout.php">Logout</a>
-                    <?php else:?>
-                        <a class="nav-link" href="index.php?do=login"><i class="fa-solid fa-user"></i> Login</a>
-                    <?php endif;?>
-                </li>
+                <?php if(isset($_SESSION['admin'])):?>
+                    <li class="nav-item"><a class="nav-link" href="admin.php">Dashboard</a></li>
+                <?php elseif(isset($_SESSION['user'])):?>
+                    <li class="nav-item"><a class="nav-link" href="index.php?do=user"><i class="fa-solid fa-user"></i> <?=$_SESSION['user'];?></a></li>
+                    <li class="nav-item"><a class="nav-link" href="api/logout.php">Logout</a></li>
+                <?php else:?>
+                    <li class="nav-item"><a class="nav-link" href="index.php?do=login"><i class="fa-solid fa-user"></i> Login</a></li>
+                <?php endif;?>
             </ul>
         </div>
     </nav>
