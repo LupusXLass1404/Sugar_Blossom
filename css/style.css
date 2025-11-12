@@ -151,7 +151,6 @@ a {
     }
 }
 
-
 .menu-img {
     aspect-ratio: 1.6/1;
     overflow: hidden;
@@ -404,6 +403,78 @@ a {
     color: #fff;
     text-align: center;
 }
+
+/* ====================== Order Start ====================== */
+.order-main {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 991px) {
+    .order-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575px) {
+    .order-main {
+        gap: 16px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.order-img {
+    position: relative;
+}
+
+.order-add {
+    position: absolute;
+    bottom: -3%;
+    right: -3%;
+}
+
+.order-add button {
+    min-width: 50px;
+    color: #fff;
+    background-color: #6C3A39;
+    border: 1px solid #fff;
+    border-radius: 30px 0 0 0;
+    font-size: 1.5rem;
+    aspect-ratio: 1/1;
+    transition: .2s;
+}
+
+.order-add button:hover {
+    background-color: #914E4C;
+    border-color: #fff;
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 991px) {
+    .order-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .order-add button {
+        min-width: 60px;
+        border-radius: 40px 0 0 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .order-main {
+        gap: 16px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .order-add button {
+        min-width: 80px;
+        border-radius: 50px 0 0 0;
+    }
+}
+
 
 /* ====================== Footer Start ====================== */
 footer a {

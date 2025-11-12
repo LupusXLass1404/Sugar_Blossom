@@ -66,4 +66,12 @@
     </div>
 </footer>
 
+<!-- modal -->
+<div class="modal fade" id="exampleModal">
+    <div class="modal-dialog">
+        <div id="modal-load" class="modal-content">
+        </div>
+    </div>
+</div>
+
 <script src="./js/scrollReveal.js"></script>
