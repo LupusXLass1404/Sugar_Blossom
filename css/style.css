@@ -475,6 +475,32 @@ a {
     }
 }
 
+/* odder-detail */
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity button {
+    background-color: #6C3A39;
+    border: none;
+    color: white;
+    padding: 4px 16px;
+    border-radius: 4px;
+    transition: background-color .3s;
+}
+
+.quantity button:hover {
+    background-color: #914E4C;
+}
+
+.quantity span.qty {
+    min-width: 24px;
+    text-align: center;
+    display: inline-block;
+}
+
 
 /* ====================== Footer Start ====================== */
 footer a {

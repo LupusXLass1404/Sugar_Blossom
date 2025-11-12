@@ -13,7 +13,7 @@
                         <button onclick="showModal('./modal/order_detail.php?id=<?=$p['id']?>')"> + </button>
                     </div>
                 </div>
-                <p><?=$p['name']?></p>
+                <p><span style="color: #6C3A39">£<?=$p['price']?></span><br><?=$p['name']?></p>
             </div>
 
         <?php endforeach;?>

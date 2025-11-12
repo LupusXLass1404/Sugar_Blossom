@@ -29,6 +29,9 @@ if(!empty($_POST)){
             if(isset($row['type'])){
                 $row['type'] = $_POST['type'][$idx];
             }
+            if(isset($row['price'])){
+                $row['price'] = $_POST['price'][$idx];
+            }
             if(isset($row['depiction'])){
                 $row['depiction'] = $_POST['depiction'][$idx];
             }

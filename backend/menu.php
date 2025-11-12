@@ -10,6 +10,7 @@
                     <tr>
                         <th>Image</th>
                         <th>Name</th>
+                        <th>Price</th>
                         <th>Type</th>
                         <th>Depiction</th>
                         <th width=5%>Show</th>
@@ -29,6 +30,9 @@
                         </td>
                         <td>
                             <input type="text" name="name[]" value="<?=$row['name'];?>" class="input-text">
+                        </td>
+                        <td>
+                            <input type="number" name="price[]" value="<?=$row['price'];?>" class="input-text">
                         </td>
                         <td>
                             <select name="type[]" class="input-text">
@@ -75,6 +79,9 @@
                         <td></td>
                         <td>
                             <input type="text" name="add[name][]" value="" class="input-text">
+                        </td>
+                        <td>
+                            <input type="number" name="add[price][]" value="" class="input-text">
                         </td>
                         <td>
                             <select name="add[type][]" class="input-text">
