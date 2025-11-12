@@ -174,8 +174,8 @@
                         <textarea style="height: 200px;" placeholder="Message"></textarea>
                     </div>
                     <div>
-                        <input type="submit">
-                        <input type="reset">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
                     </div>
                 </form>
 
