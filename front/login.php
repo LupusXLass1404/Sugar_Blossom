@@ -60,7 +60,7 @@
             .then(result => {
                 if (result.success) {
                     // 登入成功
-                    window.location.href = "./index.php";
+                    window.location.href = "./index.php?do=order";
                 } else {
                     // 登入失敗
                     errorId.textContent = result.message || "Login failed";
