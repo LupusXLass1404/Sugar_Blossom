@@ -483,16 +483,7 @@ a {
 }
 
 .quantity button {
-    background-color: #6C3A39;
-    border: none;
-    color: white;
     padding: 4px 16px;
-    border-radius: 4px;
-    transition: background-color .3s;
-}
-
-.quantity button:hover {
-    background-color: #914E4C;
 }
 
 .quantity span.qty {
@@ -501,6 +492,15 @@ a {
     display: inline-block;
 }
 
+.btn-brown {
+    background-color: #6C3A39;
+    color: white;
+}
+
+.btn-brown:hover {
+    background-color: #914E4C;
+    color: white;
+}
 
 /* ====================== Footer Start ====================== */
 footer a {

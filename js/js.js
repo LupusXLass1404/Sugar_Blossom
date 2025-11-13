@@ -11,3 +11,11 @@ function formFail() {
     void errorId.offsetWidth; // 觸發重排
     errorId.classList.add('shake');
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener('hide.bs.modal', function (event) {
+        if (document.activeElement) {
+            document.activeElement.blur();
+        }
+    });
+});

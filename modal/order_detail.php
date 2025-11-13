@@ -22,6 +22,7 @@
             <p><?=$row['depiction']?></p>
         </div>
     </div>
+    <input id="item_id" type="hidden" name="id" value="<?= $_GET['id'];?>">
     <input id="basePrice" type="hidden" name="price" value="<?= $row['price'];?>">
 
     <!-- 蛋糕客製 -->
@@ -75,30 +76,68 @@
 <div class="modal-footer" style="justify-content: space-between;">
     <div style="float: left; display: flex; gap: 8px">
         <div class="quantity">
-            <button onclick="dec()">-</button>
+            <button class="btn btn-brown" onclick="dec()">-</button>
             <span id="qty">1</span>
-            <button onclick="inc()">+</button>
+            <button class="btn btn-brown" onclick="inc()">+</button>
         </div>
         <div>
-            Total: £<span id="total" class="price"></span>
+            Total: £<span id="total" class="price"><?= $row['price'];?></span>
         </div>
     </div>
     <div>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Add</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-brown" onclick="addToCart()">Add</button>
     </div>
 </div>
 
 <script>
-    const basePrice = parseFloat($('#basePrice').val(););
-    let qty = 1;
+    var basePrice = parseFloat($('#basePrice').val());
+    var qty = 1;
+    var total = basePrice;
 
-
-    function total(){
+    function totalUpdate(){
+        total = qty * basePrice;
         $('#qty').html(qty);
-        $('#total').html(qty*basePrice);
+        $('#total').html((qty * basePrice).toFixed(2));
     }
-    function add(){
 
+    function dec(){
+        if(qty > 1){
+            qty--
+            totalUpdate();
+        }
+    }
+    function inc(){
+        qty++
+        totalUpdate();
+    }
+
+    function addToCart(){
+        // 得到id
+        const id = $('#item_id').val();
+
+        const data = {'id': id, 'qty': qty};
+
+        // 取出購物車資料，沒有就生成陣列
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // 2️⃣ 檢查這個商品是否已存在
+        const existing = cart.find(i => i.id === data.id);
+
+        if (existing) {
+            // 如果有就只更新數量
+            existing.qty += data.qty;
+        } else {
+            // 如果沒有就新增
+            cart.push(data);
+        }
+
+        // 儲存 localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // 呼叫主頁面的購物車更新
+        window.parent.updateCart();
+
+        // 關閉彈窗
+        window.parent.$('#exampleModal').modal('hide');
     }
 </script>
