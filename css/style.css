@@ -502,6 +502,49 @@ a {
     color: white;
 }
 
+/* ====================== Checkout Start ====================== */
+
+/* Row with two columns */
+.checkout-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Each column */
+.checkout-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Single-line fields */
+.checkout-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+/* Inputs and textarea full width */
+.checkout-form input[type="text"],
+.checkout-form input[type="tel"],
+.checkout-form input[type="date"],
+.checkout-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 10px;
+}
+
+/* Buttons */
+.checkout-buttons {
+    margin-top: 1rem;
+}
+
+.checkout-buttons input {
+    padding: 8px 16px;
+    margin-right: 8px;
+}
+
 /* ====================== Footer Start ====================== */
 footer a {
     color: #A27474;
