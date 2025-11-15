@@ -4,12 +4,13 @@
         exit;
     }
 ?>
+
 <i class="fa-solid fa-cart-shopping"></i>
 <div class="container mt-3">
     <h2>Checkout</h2>
     <div class="row">
         <div class="col-lg-8">
-            <form action="" class="p-4 checkout-form ">
+            <form action="" class="py-2 px-2 checkout-form ">
                 <div class="checkout-row">
                     <div class="checkout-col">
                         <label for="customer_name">Name:</label>
@@ -42,15 +43,17 @@
         </div>
 
         <!-- 購物車 -->
-        <div class="col-lg-4">
-            <?php if(isset($_SESSION['user'])):?>
-                <a href="index.php?do=checkout">Checkout</a>
-            <?php else:?>
-                <a href="index.php?do=login">Please log in before checkout.</a>
-            <?php endif;?>
+        <div class="col-lg-4 pb-5">
+            <h3>Cart</h3>
+
+            <!-- 購物列表 -->
             <div id="cart"></div>
-            <hr>
-            Total: £<span id="cartTotal"></apan>
+
+            <!-- 總價 -->
+            <div class="cart-total">
+                <span class="total-label">Total:</span>
+                <span class="total-amount">£<span id="cartTotal"></span></span>
+            </div>
         </div>
     </div>
 </div>

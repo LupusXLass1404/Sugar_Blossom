@@ -20,16 +20,22 @@
         </div>
 
         <!-- 購物車 -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 pb-5">
+            <h3>Cart</h3>
             <?php if(isset($_SESSION['user'])):?>
-                <a href="index.php?do=checkout">Checkout</a>
+                <a href="index.php?do=checkout"><button class="btn btn-brown">Go to Checkout</button></a>
             <?php else:?>
                 <a href="index.php?do=login">Please log in before checkout.</a>
             <?php endif;?>
-            <div id="cart"></div>
-            <hr>
-            Total: £<span id="cartTotal"></apan>
 
+            <!-- 購物列表 -->
+            <div id="cart"></div>
+
+            <!-- 總價 -->
+            <div class="cart-total">
+                <span class="total-label">Total:</span>
+                <span class="total-amount">£<span id="cartTotal"></span></span>
+            </div>
         </div>
     </div>
 </div>

@@ -22,7 +22,21 @@ function updateCart() {
             const item = menuData.find(i => i.id == e.id);
             const prices = item.price * e.qty;
             total += Number(prices);
-            tmp += `${item.name} x${e.qty} = £${prices.toFixed(2)}<br>`
+            tmp += `
+                <div class="cart-item">
+                    <img class="item-image" src="upload/${item.img}">
+                    <div class="item-info">
+                        <div class="item-row">
+                            <p class="item-title">${item.name}</p>
+                            <div class="item-price">£${prices.toFixed(2)}</div>
+                        </div>
+                        <div class="item-row">
+                            <div class="item-note">${item.type}</div>
+                            <div class="item-qty">x<span class="qty">${e.qty}</span></div>
+                        </div>
+                    </div>
+                </div>
+            `
         })
         $('#cart').html(tmp);
     }
