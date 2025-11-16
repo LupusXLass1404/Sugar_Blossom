@@ -42,6 +42,9 @@ function updateCart() {
         $('#cart').html(tmp);
     }
     $('#cartTotal').text(total.toFixed(2));
+
+    // 更新結帳按鈕
+    checkoutBtnUpdate();
 }
 
 function delCart(id) {
@@ -57,4 +60,25 @@ function delCart(id) {
 
     // 更新
     updateCart();
+}
+
+const checkoutBtn = document.getElementById('checkout');
+function checkoutBtnUpdate() {
+    if (checkoutBtn) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cart.length === 0) {
+            $('#error').text('The shopping cart is empty.');
+            checkoutBtn.disabled = true;
+            checkoutBtn.classList.remove('btn-brown');
+            checkoutBtn.classList.add('btn-secondary');
+            checkoutBtn.style.pointerEvents = 'none'; // 禁止點擊
+        } else {
+            $('#error').text('');
+            checkoutBtn.disabled = false;
+            checkoutBtn.classList.remove('btn-secondary');
+            checkoutBtn.classList.add('btn-brown');
+            checkoutBtn.style.pointerEvents = 'auto'; // 恢復點擊
+        }
+    }
 }

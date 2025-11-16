@@ -36,7 +36,7 @@
 
                 <div id="error"></div>
                 <div class="checkout-buttons">
-                    <input class="btn btn-brown" type="submit" value="Checkout">
+                    <input id="checkout" class="btn btn-brown" type="submit" value="Checkout">
                     <a href="./index.php?do=order">
                         <input type="button" class="btn btn-secondary" value="Back"></button>
                     </a>
