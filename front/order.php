@@ -32,7 +32,7 @@
                 <?php if(isset($_SESSION['user'])):?>
                     <a id="checkout" class="btn btn-brown checkout-btn" href="index.php?do=checkout">Go to Checkout</a>
                 <?php else:?>
-                    <a href="index.php?do=login" class="btn btn-brown checkout-btn"><button >Please log in before checkout</button></a>
+                    <a href="index.php?do=login" class="btn btn-brown checkout-btn">Please log in before checkout</a>
                 <?php endif;?>
             </div>
         </div>

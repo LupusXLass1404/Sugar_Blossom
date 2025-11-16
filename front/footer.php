@@ -34,7 +34,7 @@
                     <h3>Useful</h3>
                     <ul class="p-0">
                         <li><a href="https://lupusxlass1404.github.io/" target="_blank"><i class="fas fa-chevron-right"></i> Partnerships</a></li>
-                        <li><i class="fas fa-chevron-right"></i> Today's Visitors: <?=$Visitor->sum('visit_count',['visit_date'=>date("Y-m-d")]);?></li>
+                        <li><i class="fas fa-chevron-right"></i> Today's Visitors: <?=$Visitor->sum('visit_count',['visit_date'=>date("Y-m-d")])?? 0;?></li>
                         <?php
                             $monthStart = date('Y-m-01'); // 本月第一天
                             $monthEnd = date('Y-m-t');   // 本月最後一天
