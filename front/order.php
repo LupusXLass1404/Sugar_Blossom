@@ -22,12 +22,6 @@
         <!-- 購物車 -->
         <div class="col-lg-4 pb-5">
             <h3>Cart</h3>
-            <?php if(isset($_SESSION['user'])):?>
-                <a href="index.php?do=checkout"><button class="btn btn-brown">Go to Checkout</button></a>
-            <?php else:?>
-                <a href="index.php?do=login">Please log in before checkout.</a>
-            <?php endif;?>
-
             <!-- 購物列表 -->
             <div id="cart"></div>
 
@@ -35,10 +29,16 @@
             <div class="cart-total">
                 <span class="total-label">Total:</span>
                 <span class="total-amount">£<span id="cartTotal"></span></span>
+                <?php if(isset($_SESSION['user'])):?>
+                    <a href="index.php?do=checkout"><button class="btn btn-brown checkout-btn">Go to Checkout</button></a>
+                <?php else:?>
+                    <a href="index.php?do=login"><button class="btn btn-brown checkout-btn">Please log in before checkout</button></a>
+                <?php endif;?>
             </div>
         </div>
     </div>
 </div>
 
 <script src="js/cart.js"></script>
+
 

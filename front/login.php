@@ -40,7 +40,7 @@
         form.addEventListener("submit", function(e){
             e.preventDefault(); // 阻止表單默認提交
 
-             // 取得表單資料
+            // 取得表單資料
             const formData = new FormData(form);
             const data = {
                 username: formData.get("username").trim(),

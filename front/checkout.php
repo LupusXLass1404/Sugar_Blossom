@@ -5,26 +5,27 @@
     }
 ?>
 
-<i class="fa-solid fa-cart-shopping"></i>
+<!-- <i class="fa-solid fa-cart-shopping"></i> -->
 <div class="container mt-3">
     <h2>Checkout</h2>
     <div class="row">
         <div class="col-lg-8">
-            <form action="" class="py-2 px-2 checkout-form ">
+            <form id="checkoutForm" class="py-2 px-2 checkout-form ">
+                <input type="hidden" name="username" value="<?=$_SESSION['user'];?>">
                 <div class="checkout-row">
                     <div class="checkout-col">
                         <label for="customer_name">Name:</label>
-                        <input type="text" id="customer_name" name="customer_name" placeholder="Name">
+                        <input type="text" id="customer_name" name="customer_name" placeholder="Name" required>
                     </div>
                     <div class="checkout-col">
                         <label for="customer_phone">Phone:</label>
-                        <input type="tel" id="customer_phone" name="customer_phone" placeholder="Phone">
+                        <input type="tel" id="customer_phone" name="customer_phone" placeholder="Phone" required>
                     </div>
                 </div>
 
                 <div class="checkout-field">
                     <label for="pickup">Pickup Time:</label>
-                    <input type="date" id="pickup" name="pickup">
+                    <input type="date" id="pickup" name="pickup" required>
                     <small>The cake requires at least three days to prepare.</small>
                 </div>
 
@@ -33,6 +34,7 @@
                     <textarea id="note" name="note" placeholder="Note"></textarea>
                 </div>
 
+                <div id="error"></div>
                 <div class="checkout-buttons">
                     <input class="btn btn-brown" type="submit" value="Checkout">
                     <a href="./index.php?do=order">
@@ -61,22 +63,6 @@
 <script>
     const dateId = document.getElementById('pickup');
 
-    // // 取得今天日期
-    // const today = new Date();
-
-    // // 計算三天後
-    // today.setDate(today.getDate() + 3);
-
-    // // 轉成 YYYY-MM-DD 格式
-    // const yyyy = today.getFullYear();
-    // const mm = String(today.getMonth() + 1).padStart(2, '0'); // 月份從0開始
-    // const dd = String(today.getDate()).padStart(2, '0');
-    // const minDate = `${yyyy}-${mm}-${dd}`;
-
-    // // 設定 min 屬性
-    // dateInput.min = minDate;
-    // dateInput.max = minDate;
-
     const getDate = (days) => {
         // 取得今天日期
         const d = new Date();
@@ -90,5 +76,55 @@
 
     dateId.min = getDate(3);
     dateId.max = getDate(30);
+
+    // 傳數據到後台
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById('checkoutForm');
+        const errorId = document.getElementById('error');
+
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+
+            // 取得表單資料
+            const formData = new FormData(form);
+            const data = {
+                user: formData.get("username"),
+                customer_name: formData.get("customer_name"),
+                customer_phone: formData.get("customer_phone"),
+                item: JSON.parse(localStorage.getItem('cart')),
+                pickup: formData.get("pickup"),
+                note: formData.get("note"),
+            };
+
+            fetch("./api/checkout.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            // .then(response => response.text())
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+
+                if (result.success) {
+                    // 成功
+                    window.location.href = "./index.php?do=user";
+                    localStorage.removeItem('cart');
+                } else {
+                    // 失敗
+                    errorId.textContent = result.message || "Checkout failed";
+                    formFail();
+                }
+            })
+            .catch(err => {
+                console.log(err)
+                errorId.textContent = "Network error. Please try again.";
+                formFail();
+            });
+        })
+    })
+
 </script>
 <script src="js/cart.js"></script>

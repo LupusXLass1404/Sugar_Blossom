@@ -15,7 +15,7 @@ function updateCart() {
     // 取出購物車資料
     const cart = JSON.parse(localStorage.getItem('cart'));
     let tmp = '';
-    let total = 0;
+    var total = 0;
 
     if (cart) {
         cart.forEach(function (e) {
