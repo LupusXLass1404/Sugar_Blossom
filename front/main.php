@@ -164,25 +164,55 @@
         <div class="row contact-border slid-down">
             <div class="col-lg-6 px-0 contact-img"></div>
             <div class="col-lg-6 px-0 contact-card">
-                <form action="" class="p-5 contact-form">
+                <form id="contactForm" class="p-5 contact-form">
                     <div>
-                        <input type="text" placeholder="Name">
-                        <input type="text" placeholder="Phone">
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="tel" name="tel" placeholder="Phone">
                     </div>
                     <div>
-                        <input type="text" placeholder="Email">
+                        <input type="email" name="email" placeholder="Email">
                     </div>
                     <div>
-                        <textarea style="height: 200px;" placeholder="Message"></textarea>
+                        <textarea style="height: 200px;" name="message" placeholder="Message" required></textarea>
                     </div>
                     <div>
                         <input type="submit" value="Submit">
                         <input type="reset" value="Reset">
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
 </section>
 <!-- Contact End -->
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // 防止表單自動提交
+
+        const form = e.target;
+        const formData = new FormData(form);
+
+        // 送出表單
+        fetch('api/contact.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        // .then(response => response.json())
+        .then(res => {
+            console.log(res);
+
+            if (res.success) {
+                alert('Thank you for contacting us!');
+                form.reset();
+            } else {
+                alert('There was an error sending your message.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error sending your message.');
+        });
+    });
+</script>

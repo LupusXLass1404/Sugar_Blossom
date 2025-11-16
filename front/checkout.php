@@ -108,8 +108,6 @@
                 // .then(response => response.text())
                 .then(response => response.json())
                 .then(result => {
-                    console.log(result)
-
                     if (result.success) {
                         // 成功
                         window.location.href = "./index.php?do=user";

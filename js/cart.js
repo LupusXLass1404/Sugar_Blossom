@@ -53,7 +53,6 @@ function delCart(id) {
 
     // 刪除指定資料
     cart = cart.filter(item => item.id != id);
-    console.log(cart);
 
     // 存回
     localStorage.setItem('cart', JSON.stringify(cart));

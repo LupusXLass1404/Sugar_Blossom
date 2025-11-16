@@ -33,7 +33,7 @@
                     FROM sugar_blossom_visitor
                     WHERE YEAR(visit_date) = {$y['year']}
                     GROUP BY MONTH(visit_date)
-                    ORDER BY month
+                    ORDER BY month DESC
                 ");
 
                 foreach($monthRows as $m):

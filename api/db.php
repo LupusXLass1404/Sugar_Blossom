@@ -69,18 +69,30 @@ class DB{
             $id = $array['id'];
             unset($array['id']);
 
-            $tmp = $this -> a2s($array);
+            // 產生欄位 = :placeholder
+            $tmp = [];
+            foreach($array as $key => $value){
+                $tmp[] = "`$key` = :$key";
+            }
 
-            $sql = "Update `{$this -> table}` Set " . join(", ", $tmp) . " Where id = {$id}";
+            $sql = "UPDATE `{$this->table}` SET " . join(", ", $tmp) . " WHERE id = :id";
+            $stmt = $this->pdo->prepare($sql);
+
+            // 加入 id
+            $array['id'] = $id;
+
+            return $stmt->execute($array);
+
         } else {
             // 新增
             $keys = array_keys($array);
+            $placeholders = ":" . join(", :", $keys);
 
-            $sql = "Insert Into `{$this -> table}`(`" . join("`, `", $keys) . "`) Values ('" . join("', '", $array) . "') ";
+            $sql = "INSERT INTO `{$this->table}`(`" . join("`, `", $keys) . "`) VALUES ($placeholders)";
+            $stmt = $this->pdo->prepare($sql);
+
+            return $stmt->execute($array);
         }
-        // echo $sql;
-        // return $sql;
-        return $this -> pdo -> exec($sql);
     }
 
     protected function math($math, $col = 'id', $where = [],$arg = ''){
@@ -159,6 +171,7 @@ $Visitor = new DB("sugar_blossom_visitor");
 $Admin=new DB('sugar_blossom_admin');
 $User=new DB('sugar_blossom_user');
 $Order=new DB('sugar_blossom_order');
+$Contact=new DB('sugar_blossom_contact');
 
 
 
