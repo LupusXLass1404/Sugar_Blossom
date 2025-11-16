@@ -35,10 +35,26 @@ function updateCart() {
                             <div class="item-qty">x<span class="qty">${e.qty}</span></div>
                         </div>
                     </div>
+                    <button class="delete-btn" onclick="delCart(${item.id})">&times;</button>
                 </div>
             `
         })
         $('#cart').html(tmp);
     }
     $('#cartTotal').text(total.toFixed(2));
+}
+
+function delCart(id) {
+    // 取出購物車資料
+    let cart = JSON.parse(localStorage.getItem('cart'));
+
+    // 刪除指定資料
+    cart = cart.filter(item => item.id != id);
+    console.log(cart);
+
+    // 存回
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // 更新
+    updateCart();
 }

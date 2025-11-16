@@ -84,45 +84,50 @@
 
         form.addEventListener("submit", function(e){
             e.preventDefault();
+            const cart = JSON.parse(localStorage.getItem('cart'));
 
-            // 取得表單資料
-            const formData = new FormData(form);
-            const data = {
-                user: formData.get("username"),
-                customer_name: formData.get("customer_name"),
-                customer_phone: formData.get("customer_phone"),
-                item: JSON.parse(localStorage.getItem('cart')),
-                pickup: formData.get("pickup"),
-                note: formData.get("note"),
-            };
+            if(cart.length > 0){
+                // 取得表單資料
+                const formData = new FormData(form);
+                const data = {
+                    user: formData.get("username"),
+                    customer_name: formData.get("customer_name"),
+                    customer_phone: formData.get("customer_phone"),
+                    item: cart,
+                    pickup: formData.get("pickup"),
+                    note: formData.get("note"),
+                };
 
-            fetch("./api/checkout.php", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            })
-            // .then(response => response.text())
-            .then(response => response.json())
-            .then(result => {
-                console.log(result)
+                fetch("./api/checkout.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                })
+                // .then(response => response.text())
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)
 
-                if (result.success) {
-                    // 成功
-                    window.location.href = "./index.php?do=user";
-                    localStorage.removeItem('cart');
-                } else {
-                    // 失敗
-                    errorId.textContent = result.message || "Checkout failed";
+                    if (result.success) {
+                        // 成功
+                        window.location.href = "./index.php?do=user";
+                        localStorage.removeItem('cart');
+                    } else {
+                        // 失敗
+                        errorId.textContent = result.message || "Checkout failed";
+                        formFail();
+                    }
+                })
+                .catch(err => {
+                    errorId.textContent = "Network error. Please try again.";
                     formFail();
-                }
-            })
-            .catch(err => {
-                console.log(err)
-                errorId.textContent = "Network error. Please try again.";
+                });
+            } else {
+                errorId.textContent = "Your shopping cart is empty!";
                 formFail();
-            });
+            }
         })
     })
 
