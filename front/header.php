@@ -18,7 +18,7 @@
                 <li class="nav-item"><a class="nav-link" href="index.php#menu">Menu</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.php#news">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.php#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.php?do=order">Order</a></li>
+                <li class="nav-item"><a class="nav-link cart-order" href="index.php?do=order">Order<span id="cart-count" class="cart-count">0</span></a></li>
 
                 <?php if(isset($_SESSION['user'])): ?>
                     <li class="nav-item"><a class="nav-link" href="index.php?do=user"><i class="fa-solid fa-user"></i> <?=$_SESSION['user'];?></a></li>
@@ -39,3 +39,19 @@
 </header>
 
 <!-- Register -->
+ <script>
+    cartCount();
+    function cartCount(){
+
+        // 取出購物車資料
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cart.length === 0) {
+            $('#cart-count').css('display', 'none');
+        } else {
+            $('#cart-count').css('display', 'inline-block');
+        }
+
+        $('#cart-count').text(cart.length)
+    }
+ </script>

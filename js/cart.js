@@ -12,10 +12,13 @@ fetch("./api/getMenu.php")
 
 // 更新購物車
 function updateCart() {
+    // 更新header的數字
+    cartCount();
     // 取出購物車資料
     const cart = JSON.parse(localStorage.getItem('cart'));
     let tmp = '';
     var total = 0;
+
 
     if (cart) {
         cart.forEach(function (e) {
@@ -46,6 +49,7 @@ function updateCart() {
     // 更新結帳按鈕
     checkoutBtnUpdate();
 }
+
 
 function delCart(id) {
     // 取出購物車資料

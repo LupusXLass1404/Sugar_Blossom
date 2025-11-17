@@ -105,6 +105,33 @@ a {
     text-decoration: none;
 }
 
+.cart-order {
+    position: relative;
+}
+
+.cart-count {
+    width: 1.3rem;
+    aspect-ratio: 1/1;
+    background-color: #ffffff;
+    border-radius: 100px;
+    color: #533633;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.3rem;
+    position: absolute;
+    top: -0.3rem;
+    right: -0.5rem;
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .cart-count {
+        top: initial;
+        left: 3.5rem;
+    }
+}
+
 /* ====================== About Start ====================== */
 .about-imgs {
     display: flex;

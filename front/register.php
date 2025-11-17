@@ -59,8 +59,8 @@
                     },
                     body: JSON.stringify(data)
                 })
-                .then(response => response.text())
-                // .then(response => response.json()) // 假設 API 回傳 JSON
+                // .then(response => response.text())
+                .then(response => response.json()) // 假設 API 回傳 JSON
                 .then(result => {
                     console.log(result);
 
