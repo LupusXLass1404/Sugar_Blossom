@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    if ($User -> count(["username" => $username])) {
+    if ($User -> count(["username" => $username]) || $username === 'admin') {
         echo json_encode(['success' => false, 'message' => 'Username already exists']);
         exit;
     }
@@ -35,5 +35,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo json_encode(['success' => false, 'message' => 'Register failed']);
     }
-
 }

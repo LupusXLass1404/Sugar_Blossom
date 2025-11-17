@@ -58,7 +58,7 @@
 
             <?php
                 $do=ucfirst($_GET['do']);
-                $rows = $$do -> all();
+                $rows = $$do -> all([],"ORDER BY visit_date DESC");
                 foreach($rows as $row):
             ?>
 

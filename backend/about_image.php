@@ -70,7 +70,7 @@
                 </table>
             </div>
             <div class="admin-buttons">
-                <input type="submit" value="Save" class="admin-button">
+                <input type="submit" value="Save changes" class="admin-button">
                 <input type="reset" value="Reset" class="admin-button">
             </div>
         </form>

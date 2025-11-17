@@ -198,11 +198,9 @@
             method: 'POST',
             body: formData
         })
-        .then(response => response.text())
-        // .then(response => response.json())
+        // .then(response => response.text())
+        .then(response => response.json())
         .then(res => {
-            console.log(res);
-
             if (res.success) {
                 alert('Thank you for contacting us!');
                 form.reset();

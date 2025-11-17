@@ -66,10 +66,10 @@
 
                 </table>
             </div>
-            <div class="admin-buttons">
-                <input type="submit" value="Save" class="admin-button">
+            <!-- <div class="admin-buttons">
+                <input type="submit" value="Save changes" class="admin-button">
                 <input type="reset" value="Reset" class="admin-button">
-            </div>
+            </div> -->
         </form>
     </div>
 </div>
